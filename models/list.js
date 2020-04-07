@@ -5,10 +5,13 @@ const mongoose = require('mongoose');
 //Define the schema
 const List = new mongoose.Schema({
   _id: String,
-  customerName: String,
+  CustomerName: String,
   location: String,
   items: [String],
-  phone: String
+  budget: String,
+  timePosted: Date,
+  fulfilled: String,
+  comments: [[String]]
 });
 
 // Convert incoming time strings to Date objects
