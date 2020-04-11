@@ -16,7 +16,7 @@ const List = new mongoose.Schema({
 
 // Convert incoming time posted strings to Date objects
 List.path('time').set(function(timePosted) {
-  return new Date(`${time}`);
+  return new Date(`${timePosted}`);
 });
 
 // Provide a 12-hour time string as a virtual property
