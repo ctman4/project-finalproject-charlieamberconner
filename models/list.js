@@ -14,18 +14,18 @@ const List = new mongoose.Schema({
   comments: [[String]]
 });
 
-// Convert incoming time strings to Date objects
-Section.path('time').set(function(time) {
+// Convert incoming time posted strings to Date objects
+List.path('time').set(function(timePosted) {
   return new Date(`1/15/2020 ${time}`);
 });
 
 // Provide a 12-hour time string as a virtual property
-Section.virtual('time12').get(function() {
+List.virtual('time12').get(function() {
   return this.time.toLocaleTimeString('en-US', {hour: 'numeric', minute: 'numeric'});
 });
 
 // Provide a 24-hour time string as a virtual property
-Section.virtual('time24').get(function() {
+List.virtual('time24').get(function() {
   return this.time.toLocaleTimeString('en-US', {hour12: false});
 });
 
