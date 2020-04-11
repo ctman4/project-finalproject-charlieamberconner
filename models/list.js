@@ -15,7 +15,7 @@ const List = new mongoose.Schema({
 });
 
 // Convert incoming time posted strings to Date objects
-List.path('time').set(function(timePosted) {
+List.path('timePosted').set(function(timePosted) {
   return new Date(`${timePosted}`);
 });
 
