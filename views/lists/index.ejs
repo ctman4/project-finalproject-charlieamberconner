@@ -24,8 +24,8 @@
             <div class="col-md-3">
                 <div class="card">
                     <div class="card-body">
-                        <div class="h5">@charlestirrell1</div>
-                        <div class="h7 text-muted">Fullname : Charles Tirrell</div>
+                        <div class="h5">@charlestirrell99</div>
+                        <div class="h7 text-muted">Full Name : Charles Tirrell</div>
                     </div>
                 </div>
             </div>
@@ -73,6 +73,7 @@
                 <!-- Post /////-->
 
                 <!--- \\\\\\\Post-->
+                <%_ for (const list of lists) { -%>
                 <div class="card gedf-card">
                     <div class="card-header">
                         <div class="d-flex justify-content-between align-items-center">
@@ -81,7 +82,7 @@
                                     <img class="rounded-circle" width="45" src="https://picsum.photos/50/50" alt="">
                                 </div>
                                 <div class="ml-2">
-                                    <div class="h5 m-0">@charlestirrell99</div>
+                                    <div class="h5 m-0"> <%= list._id -%> </div>
                                     <div class="h7 text-muted">Charles Tirrell</div>
                                 </div>
                             </div>
