@@ -4,6 +4,7 @@ const lists = require('./controllers/lists');
 
 const router = express.Router();
 
+/*
 // Check for admin status
 const authorize = function(request, response, next) {
   if (request.session.admin) {
@@ -12,6 +13,8 @@ const authorize = function(request, response, next) {
     response.status(401).end();
   }
 };
+*/
+
 
 // Handle user requests
 router.get('/users', users.index);

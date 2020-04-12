@@ -12,6 +12,7 @@ const app = express();
 app.set('view engine', 'ejs');
 app.set('views', './views');
 
+/*
 // Enter admin mode and return to the previous page
 app.get('/login', function(request, response) {
   request.session.admin = true;
@@ -29,7 +30,7 @@ app.use(function(request, response, next) {
   response.locals.admin = request.session.admin;
   next();
 });
-
+*/
 
 // Ignore icon requests
 app.get('/favicon.ico', function(request, response) {
