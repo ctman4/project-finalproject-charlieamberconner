@@ -8,6 +8,7 @@ const router = express.Router();
 router.get('/users', users.index);
 
 // Handle list requests
-router.get('/lists', list.index);
+router.get('/lists', lists.index);
+router.get('/lists/:id', lists.retrieve);
 
 module.exports = router;
