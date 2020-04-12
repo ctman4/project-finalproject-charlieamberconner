@@ -85,20 +85,20 @@
                                       </div>
                                       <div class="ml-2">
                                           <div class="h5 m-0"> <%= list._id -%> </div>
-                                          <div class="h7 text-muted">Charles Tirrell</div>
+                                          <div class="h7 text-muted"><%= list.CustomerName -%></div>
                                       </div>
                                   </div>
                               </div>
 
                           </div>
                           <div class="card-body">
-                              <div class="text-muted h7 mb-2"> <i class="fa fa-clock-o"></i>4/7/2020 4:19 PM</div>
+                              <div class="text-muted h7 mb-2"> <i class="fa fa-clock-o"></i><%= list.timePosted -%></div>
                               <a class="card-link" href="#">
                                   <h5 class="card-title">My List</h5>
                               </a>
 
                               <p class="card-text">
-                                  Bananas, Carrots, Beef, Orange Juice, Doritos
+                                  <%= list.items -%>
                               </p>
                           </div>
                           <div class="card-footer">
