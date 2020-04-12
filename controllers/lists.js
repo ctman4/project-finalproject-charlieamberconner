@@ -1,4 +1,4 @@
-const List = require('../models/list');
+const List = require('../models/lists');
 
 // GET /lists
 module.exports.index = function(request, response, next) {
