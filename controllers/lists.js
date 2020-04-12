@@ -5,6 +5,6 @@ module.exports.index = function(request, response, next) {
   const order = request.query.sort || 'timePosted'; // Default to sort by course
 
   List.find().sort()
-    .then(lists => response.render('lists/index', {list: lists}))
+    .then(lists => response.render('lists/index', {lists: lists}))
     .catch(error => next(error));
 };
