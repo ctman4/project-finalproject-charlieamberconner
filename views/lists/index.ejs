@@ -104,7 +104,8 @@
                           <div class="card-body">
                             <div class="border">Comments:</div>
                             <%_ for (const com of list.comments) { -%>
-                              <p class="card-text">com[0]</p>
+                              <p class="card-text"><%= com[0] -%></p>
+                              <p class="card-text"><%= com[1] -%></p>
                             <%_ } -%>
                           </div>
                           <div class="card-footer">
