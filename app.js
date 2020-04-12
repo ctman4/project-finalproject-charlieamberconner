@@ -12,6 +12,25 @@ const app = express();
 app.set('view engine', 'ejs');
 app.set('views', './views');
 
+// Enter admin mode and return to the previous page
+app.get('/login', function(request, response) {
+  request.session.admin = true;
+  response.redirect('back');
+});
+
+// Exit admin mode and return to the previous page
+app.get('/logout', function(request, response) {
+  request.session.admin = false;
+  response.redirect('back');
+});
+
+// Make the mode available in all views
+app.use(function(request, response, next) {
+  response.locals.admin = request.session.admin;
+  next();
+});
+
+
 // Ignore icon requests
 app.get('/favicon.ico', function(request, response) {
   response.status(204).end();
