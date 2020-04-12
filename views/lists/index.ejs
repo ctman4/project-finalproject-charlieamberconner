@@ -101,6 +101,11 @@
                                   <%= list.items -%>
                               </p>
                           </div>
+                          <div class="card-body">
+                            <%_ for (const comment of lists.comments) { -%>
+                              <p class="card-text">comment</p>
+                            <%_ } -%>
+                          </div>
                           <div class="card-footer">
                               <a href="#" class="card-link"><i class="fa fa-gittip"></i> Deliver this list</a>
                               <a href="#" class="card-link"><i class="fa fa-comment"></i> Comment</a>
