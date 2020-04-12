@@ -102,10 +102,12 @@
                               </p>
                           </div>
                           <div class="card-body">
-                            <div class="border">Comments:</div>
+                            <h4 class="border">Comments:</h4>
                             <%_ for (const com of list.comments) { -%>
-                              <p class="card-text"><%= com[0] -%></p>
-                              <p class="card-text"><%= com[1] -%></p>
+                              <tr>
+                                <td class="card-text"><%= com[0] -%></td>
+                                <td class="card-text"><%= com[1] -%></td>
+                              </tr>
                             <%_ } -%>
                           </div>
                           <div class="card-footer">
