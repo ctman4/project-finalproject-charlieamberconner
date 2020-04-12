@@ -1,13 +1,15 @@
-
-<h1 class="navbar-brand">Grocery List</h1>
-<nav class="navbar-nav ml-3">
-  <a href="/user" class="nav-item nav-link <%= active === 'users' ? 'active' : 'inactive' -%>">My Account</a>
-  <a href="/list" class="nav-item nav-link <%= active === 'lists' ? 'active' : 'inactive' -%>">Lists</a>
-</nav>
-<!--
-<nav class="navbar-nav ml-auto">
+<header class="navbar navbar-expand navbar-dark bg-dark">
+  <h1 class="navbar-brand">Grocery List</h1>
   <nav class="navbar-nav ml-3">
-  <a href="/courses" class="nav-item nav-link <%= (active === 'courses') ? 'active' : 'inactive' -%>">Courses</a>
-  <a href="/sections" class="nav-item nav-link <%= (active === 'sections') ? 'active' : 'inactive' -%>">Sections</a>
-</nav>
-</nav>
+    <a href="/user" class="nav-item nav-link <%= active === 'users' ? 'active' : 'inactive' -%>">My Account</a>
+    <a href="/list" class="nav-item nav-link <%= active === 'lists' ? 'active' : 'inactive' -%>">Lists</a>
+  </nav>
+  <!--
+  <nav class="navbar-nav ml-auto">
+    <nav class="navbar-nav ml-3">
+    <a href="/courses" class="nav-item nav-link <%= (active === 'courses') ? 'active' : 'inactive' -%>">Courses</a>
+    <a href="/sections" class="nav-item nav-link <%= (active === 'sections') ? 'active' : 'inactive' -%>">Sections</a>
+  </nav>
+  </nav>
+
+</header>
