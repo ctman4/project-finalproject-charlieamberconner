@@ -1,3 +1,3 @@
 module.exports.index = function(request, response) {
-  response.send('GET /list');
+  response.send('GET /lists');
 };
