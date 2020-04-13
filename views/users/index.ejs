@@ -20,10 +20,10 @@
       <%- include('../navbar', {active: 'users'}); -%>
 
             <main class="p-3 row">
-              <div class="mr-2 col-9">
-                  <img class="rounded-circle" width="75" src="https://picsum.photos/50/50" alt="">
+              <div class="mr-2 col-3">
+                  <img class="rounded-circle" width="175" src="https://picsum.photos/50/50" alt="">
               </div>
-              <div class="col">
+              <div class="col-9">
                 <h2><%= user.Name -%></h2>
                 <p>@<%= user._id -%></p>
                 <p><%= user.location -%></p>
