@@ -2,7 +2,7 @@
 <html>
   <%- include('../head'); -%>
   <!------ Include the above in your HEAD tag ---------->
- <!---
+
   <body>
     <div class="pb-5">
       <%- include('../navbar', {active: 'users'}); -%>
@@ -11,26 +11,3 @@
       <img class="rounded circle" src="http://via.placeholder.com/200x200">
     </div>
   </body>
---->
-    <body>
-      <%- include('../navbar', {active: 'users'}); -%>
-      <div class="container-fluid">
-        <div class="row">
-          <div class="col-auto p-3 border-right">
-            <nav class="nav nav-pills flex-column">
-              <%_ for (const user of users) { -%>
-                <%_ const status = (id === user._id) ? 'active bg-dark' : 'inactive'; -%>
-                <a href="/users/<%= id -%>" class="nav-item nav-link <%= status -%>"><%= id -%></a>
-              <%_ } -%>
-            </nav>
-          </div>
-          <div class="col">
-            <main class="p-3">
-              <h2><%= user.driverName -%></h2>
-              <p><%= user.location -%></p>
-            </main>
-          </div>
-        </div>
-      </div>
-    </body>
-  </html>
