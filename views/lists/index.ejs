@@ -100,13 +100,11 @@
                               <p class="card-text">
                                   <%= list.items -%>
                               </p>
-                          </div>
-                          <div class="card-body">
                             <h4 class="border pl-0">Comments:</h4>
                             <%_ for (const com of list.comments) { -%>
                               <tr>
                                 <td class="font-weight-bold"><%= com[0] -%>: </td>
-                                <td class="font-weight-bold"><%= com[1] -%></td>
+                                <td><%= com[1] -%></td>
                               </tr>
                             <%_ } -%>
                           </div>
