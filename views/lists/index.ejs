@@ -100,21 +100,29 @@
                               <p class="card-text">
                                   <%= list.items -%>
                               </p>
+                              
                             <div>
                               <h4 class="ml-0">Comments:</h4>
                               <table class="table">
                                 <%_ for (const com of list.comments) { -%>
-                                  <tr>
+                                  <tr class="border-0">
                                     <td class="font-weight-bold"><%= com[0] -%>: </td>
                                     <td><%= com[1] -%></td>
                                   </tr>
                                 <%_ } -%>
                               </table>
+
+                              <div class="input-group mb-3">
+                                <input type="text" class="form-control" aria-describedby="basic-addon2">
+                                <div class="input-group-append">
+                                  <button class="btn btn-outline-secondary" type="button">Comment</button>
+                                </div>
+                              </div>
+
                             </div>
                           </div>
                           <div class="card-footer">
                               <a href="#" class="card-link"><i class="fa fa-gittip"></i> Deliver this list</a>
-                              <a href="#" class="card-link"><i class="fa fa-comment"></i> Comment</a>
                           </div>
                       </div>
                     </li>
