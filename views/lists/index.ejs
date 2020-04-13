@@ -73,7 +73,7 @@
                 <!-- Post /////-->
 
                 <!--- \\\\\\\Post-->
-                <ul class="list-group">
+                <ul class="list-group-flush">
                   <%_ for (const list of lists) { -%>
                     <li class="list-group-item">
                       <div class="card gedf-card">
@@ -101,7 +101,7 @@
                                   <%= list.items -%>
                               </p>
                             <div>
-                              <h4 class="border pl-0">Comments:</h4>
+                              <h4 class="ml-0">Comments:</h4>
                               <table class="table">
                                 <%_ for (const com of list.comments) { -%>
                                   <tr>
