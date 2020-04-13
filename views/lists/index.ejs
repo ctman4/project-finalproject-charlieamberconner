@@ -101,12 +101,14 @@
                                   <%= list.items -%>
                               </p>
                             <h4 class="border pl-0">Comments:</h4>
-                            <%_ for (const com of list.comments) { -%>
-                              <tr>
-                                <td class="font-weight-bold"><%= com[0] -%>: </td>
-                                <td><%= com[1] -%></td>
-                              </tr>
-                            <%_ } -%>
+                            <table class="table">
+                              <%_ for (const com of list.comments) { -%>
+                                <tr>
+                                  <td class="font-weight-bold"><%= com[0] -%>: </td>
+                                  <td><%= com[1] -%></td>
+                                </tr>
+                              <%_ } -%>
+                            </table>
                           </div>
                           <div class="card-footer">
                               <a href="#" class="card-link"><i class="fa fa-gittip"></i> Deliver this list</a>
