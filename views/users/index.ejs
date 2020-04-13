@@ -19,11 +19,11 @@
     <body>
       <%- include('../navbar', {active: 'users'}); -%>
 
-            <main class="p-3">
-              <h2><%= user.Name -%></h2>
-              <p><%= user._id -%></p>
-                <p><%= user.location -%></p>
-                  <p><%= user.phone -%></p>
+            <main>
+              <h2 class="p-3"><%= user.Name -%></h2>
+              <p>@<%= user._id -%></p>
+              <p><%= user.location -%></p>
+              <p>Phone Number: <%= user.phone -%></p>
             </main>
 
     </body>
