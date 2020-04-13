@@ -2,7 +2,7 @@ const User = require('../models/users');
 
 
 module.exports.index = function(request, response) {
-  response.redirect('/users/charlestirrell99')
+  response.redirect('/users/charlestirrell99');
 };
 
 module.exports.retrieve = function(request, response) {
@@ -11,7 +11,7 @@ module.exports.retrieve = function(request, response) {
     if (user) {
       response.render('users/index', {user: user});
     } else {
-      next(); // No such course
+      next(); // No such user
     }
   }).catch(error => next(error));
 };
