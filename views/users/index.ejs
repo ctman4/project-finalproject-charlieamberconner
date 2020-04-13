@@ -19,8 +19,8 @@
     <body>
       <%- include('../navbar', {active: 'users'}); -%>
 
-            <main>
-              <h2 class="p-3"><%= user.Name -%></h2>
+            <main class="p-3">
+              <h2 class="pb-6"><%= user.Name -%></h2>
               <p>@<%= user._id -%></p>
               <p><%= user.location -%></p>
               <p>Phone Number: <%= user.phone -%></p>
