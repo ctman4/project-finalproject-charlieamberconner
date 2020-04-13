@@ -6,5 +6,13 @@ module.exports.index = function(request, response) {
 };
 
 module.exports.retrieve = function(request, response) {
-  response.send(`GET /users/${request.params.id}`);
+  User.findById(request.params.id);
+
+  Promise.all(queries).then(function(user) {
+    if (user) {
+      response.render('users/index', {user: user});
+    } else {
+      next(); // No such course
+    }
+  }).catch(error => next(error));
 };
