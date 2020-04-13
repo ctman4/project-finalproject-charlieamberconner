@@ -20,14 +20,16 @@
       <%- include('../navbar', {active: 'users'}); -%>
 
             <main class="p-3">
-              <div class="mr-2 col-auto">
-                  <img class="rounded-circle" width="175" src="https://picsum.photos/50/50" alt="">
-              </div>
-              <div class="col">
-                <h2><%= user.Name -%></h2>
-                <p>@<%= user._id -%></p>
-                <p><%= user.location -%></p>
-                <p>Phone Number: <%= user.phone -%></p>
+              <div class="row">
+                <div class="mr-2 col-auto p-3 border-left">
+                    <img class="rounded-circle" width="175" src="https://picsum.photos/50/50" alt="">
+                </div>
+                <div class="col">
+                  <h2><%= user.Name -%></h2>
+                  <p>@<%= user._id -%></p>
+                  <p><%= user.location -%></p>
+                  <p>Phone Number: <%= user.phone -%></p>
+                </div>
               </div>
             </main>
 
