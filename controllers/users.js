@@ -5,7 +5,7 @@ module.exports.index = function(request, response) {
   response.redirect('/users/charlestirrell99');
 };
 
-module.exports.retrieve = function(request, response) {
+module.exports.retrieve = function(request, response, next) {
   User.findById(request.params.id)
   .then(function(user) {
     if (user) {
