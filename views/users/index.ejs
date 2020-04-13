@@ -20,13 +20,15 @@
       <%- include('../navbar', {active: 'users'}); -%>
 
             <main class="p-3">
-              <h2><%= user.Name -%></h2>
               <div class="mr-2">
-                  <img class="rounded-circle" width="45" src="https://picsum.photos/50/50" alt="">
+                  <img class="rounded-circle" width="75" src="https://picsum.photos/50/50" alt="">
               </div>
-              <p>@<%= user._id -%></p>
-              <p><%= user.location -%></p>
-              <p>Phone Number: <%= user.phone -%></p>
+              <div>
+                <h2><%= user.Name -%></h2>
+                <p>@<%= user._id -%></p>
+                <p><%= user.location -%></p>
+                <p>Phone Number: <%= user.phone -%></p>
+              </div>
             </main>
 
     </body>
