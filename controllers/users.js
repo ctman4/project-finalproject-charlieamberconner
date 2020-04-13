@@ -6,9 +6,8 @@ module.exports.index = function(request, response) {
 };
 
 module.exports.retrieve = function(request, response) {
-  const query = User.findById(request.params.id);
-
-  Promise.all(query).then(function(user) {
+  User.findById(request.params.id)
+  .then(function(user) {
     if (user) {
       response.render('users/index', {user: user});
     } else {
