@@ -9,7 +9,7 @@ module.exports.retrieve = function(request, response) {
   User.findById(request.params.id)
   .then(function(user) {
     if (user) {
-      response.render('users/index', {user: user});
+      response.render('users/index', {users: users});
     } else {
       next(); // No such user
     }
