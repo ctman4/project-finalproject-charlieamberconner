@@ -5,6 +5,7 @@ const mongoose = require('mongoose');
 //Define the schema
 const List = new mongoose.Schema({
   _id: String,
+  customerID: String,
   CustomerName: String,
   location: String,
   items: [String],
@@ -26,7 +27,7 @@ List.virtual('time12').get(function() {
 
 // Provide a 24-hour time string as a virtual property
 List.virtual('time24').get(function() {
-  return this.time12.toLocaleTimeString('en-US', {hour12: false});
+  return this.time.toLocaleTimeString('en-US', {hour12: false});
 });
 
 //Export the module
