@@ -18,23 +18,20 @@
 --->
     <body>
       <%- include('../navbar', {active: 'users'}); -%>
-      <div class="container-fluid">
-        <div class="row">
-          <div class="col-auto p-3 border-right">
-            <nav class="nav nav-pills flex-column">
-              <%_ for (const user of users) { -%>
-                <%_ const status = (id === user._id) ? 'active bg-dark' : 'inactive'; -%>
-                <a href="/users/<%= id -%>" class="nav-item nav-link <%= status -%>"><%= id -%></a>
-              <%_ } -%>
-            </nav>
-          </div>
-          <div class="col">
+
             <main class="p-3">
-              <h2><%= user.driverName -%></h2>
-              <p><%= user.location -%></p>
+              <div class="row">
+                <div class="mr-2 col-auto p-3 border-left">
+                    <img class="rounded-circle" width="175" src="https://picsum.photos/50/50" alt="">
+                </div>
+                <div class="col pt-3">
+                  <h2><%= user.Name -%></h2>
+                  <p>@<%= user._id -%></p>
+                  <p><b>Location: </b><%= user.location -%></p>
+                  <p><b>Phone Number: </b><%= user.phone -%></p>
+                </div>
+              </div>
             </main>
-          </div>
-        </div>
-      </div>
+
     </body>
   </html>

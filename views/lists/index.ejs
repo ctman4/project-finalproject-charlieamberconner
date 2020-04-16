@@ -73,9 +73,9 @@
                 <!-- Post /////-->
 
                 <!--- \\\\\\\Post-->
-                <table class="table">
+                <ul class="list-group-flush">
                   <%_ for (const list of lists) { -%>
-                    <tr>
+                    <li class="list-group-item">
                       <div class="card gedf-card">
                           <div class="card-header">
                               <div class="d-flex justify-content-between align-items-center">
@@ -100,22 +100,34 @@
                               <p class="card-text">
                                   <%= list.items -%>
                               </p>
-                            <h4 class="border pl-0">Comments:</h4>
-                            <%_ for (const com of list.comments) { -%>
-                              <tr>
-                                <td class="font-weight-bold"><%= com[0] -%>: </td>
-                                <td><%= com[1] -%></td>
-                              </tr>
-                            <%_ } -%>
+
+                            <div>
+                              <h6 class="ml-0">Comments:</h6>
+                              <table class="table border-0">
+                                <%_ for (const com of list.comments) { -%>
+                                  <tr class="border-0">
+                                    <td class="font-weight-bold"><%= com[0] -%>: </td>
+                                    <td><%= com[1] -%></td>
+                                  </tr>
+                                <%_ } -%>
+                              </table>
+
+                              <div class="input-group mb-3">
+                                <input type="text" class="form-control" aria-describedby="basic-addon2">
+                                <div class="input-group-append">
+                                  <button class="btn btn-outline-secondary" type="button">Comment</button>
+                                </div>
+                              </div>
+
+                            </div>
                           </div>
                           <div class="card-footer">
                               <a href="#" class="card-link"><i class="fa fa-gittip"></i> Deliver this list</a>
-                              <a href="#" class="card-link"><i class="fa fa-comment"></i> Comment</a>
                           </div>
                       </div>
-                    </tr>
+                    </li>
                   <%_ } -%>
-                </table>
+                </ul>
                 <!-- Post /////-->
 
 
