@@ -22,7 +22,8 @@ const List = new mongoose.Schema({
 //model a collection of Lists
 const lists = [
   new List({
-    _id: 'charlestirrell99',
+    _id: 'l1',
+    customerID: 'charlestirrell99',
     customerName: 'Charles Tirrell',
     location: 'Marion, MA',
     items: ['Bananas','Carrots','Beef','Orange Juice','Doritos'],

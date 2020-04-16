@@ -73,9 +73,9 @@
                 <!-- Post /////-->
 
                 <!--- \\\\\\\Post-->
-                <ul class="list-group-flush">
+                <table class="table">
                   <%_ for (const list of lists) { -%>
-                    <li class="list-group-item">
+                    <tr>
                       <div class="card gedf-card">
                           <div class="card-header">
                               <div class="d-flex justify-content-between align-items-center">
@@ -84,7 +84,8 @@
                                           <img class="rounded-circle" width="45" src="https://picsum.photos/50/50" alt="">
                                       </div>
                                       <div class="ml-2">
-                                          <div class="h5 m-0"> <%= list._id -%> </div>
+                                          <div class="h5 m-0">
+                                            <%= list.customerID -%> </div>
                                           <div class="h7 text-muted"><%= list.CustomerName -%></div>
                                       </div>
                                   </div>
@@ -98,36 +99,33 @@
                               </a>
 
                               <p class="card-text">
-                                  <%= list.items -%>
+                                <ul>
+                                  <%_ for (const item of items) { -%>
+                                    <li>
+                                      <div class="checkbox">
+                                        <label><input type="checkbox" value=""><%= items.item -%></label>
+                                      </div>
+                                    </li>
+                                  <%_ } -%>
+
+                                </ul>
                               </p>
-
-                            <div>
-                              <h6 class="ml-0">Comments:</h6>
-                              <table class="table border-0">
-                                <%_ for (const com of list.comments) { -%>
-                                  <tr class="border-0">
-                                    <td class="font-weight-bold"><%= com[0] -%>: </td>
-                                    <td><%= com[1] -%></td>
-                                  </tr>
-                                <%_ } -%>
-                              </table>
-
-                              <div class="input-group mb-3">
-                                <input type="text" class="form-control" aria-describedby="basic-addon2">
-                                <div class="input-group-append">
-                                  <button class="btn btn-outline-secondary" type="button">Comment</button>
-                                </div>
-                              </div>
-
-                            </div>
+                            <h4 class="border pl-0">Comments:</h4>
+                            <%_ for (const com of list.comments) { -%>
+                              <tr>
+                                <td class="font-weight-bold"><%= com[0] -%>: </td>
+                                <td><%= com[1] -%></td>
+                              </tr>
+                            <%_ } -%>
                           </div>
                           <div class="card-footer">
                               <a href="#" class="card-link"><i class="fa fa-gittip"></i> Deliver this list</a>
+                              <a href="#" class="card-link"><i class="fa fa-comment"></i> Comment</a>
                           </div>
                       </div>
-                    </li>
+                    </tr>
                   <%_ } -%>
-                </ul>
+                </table>
                 <!-- Post /////-->
 
 
