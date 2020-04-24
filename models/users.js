@@ -7,7 +7,6 @@ const User = new mongoose.Schema({
   _id: String,
   Name: String,
   location: String,
-  available: String,
   phone: Number
 });
 
