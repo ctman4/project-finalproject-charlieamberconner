@@ -11,14 +11,9 @@ module.exports.index = function(request, response, next) {
 
 // GET /lists/:id
 module.exports.retrieve = function(request, response, next) {
-  const queries = [
-    List.findById(request.params.id),
-    List.distinct('_id')
-  ];
-
-  Promise.all(queries).then(function([list, listIDs]) {
-    if (course) {
-      response.render('list/index/details', {list: list, listIDs: listIDs});
+  List.findById(request.params.id).then(function(list) {
+    if (list) {
+      response.render('lists/details', {list: list});
     } else {
       next(); // No such list
     }
