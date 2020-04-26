@@ -17,9 +17,19 @@ const authorize = function(request, response, next) {
 
 
 // Handle user requests
-//router.get('/users', users.index);
+// Handle home-page requests
+router.get('/', function(request, response) {
+  response.render('index');
+});
 
-router.get('/users/:id', users.retrieve);
+// Handle login requests
+router.post('/login', users.login);
+
+// Handle logout requests
+router.get('/logout', function(request, response) {
+  request.session.user = undefined;
+  response.redirect('/');
+});
 
 // Handle list requests
 router.get('/lists', lists.index);
