@@ -39,13 +39,13 @@
           <table>
             <thead><h4 class="pl-0 border-bottom">Comments:</h4></thead
             <%_ for (const com of list.comments) { -%>
-              <tr class="pt=1">
+              <tr class="mt=2">
                 <td class="font-weight-bold"><%= com[0] -%>: </td>
                 <td><%= com[1] -%></td>
               </tr>
             <%_ } -%>
           </table>
-          <div class="input-group mb-3">
+          <div class="input-group mt-3">
             <input type="text" class="form-control">
             <div class="input-group-append">
               <span class="input-group-text">Comment</span>
