@@ -1,6 +1,6 @@
 const User = require('../models/users');
 
-
+/*
 module.exports.index = function(request, response) {
   response.redirect('/users');
 };
@@ -16,7 +16,7 @@ module.exports.retrieve = function(request, response, next) {
     }
   }).catch(error => next(error));
 };
-
+*/
 
 // POST /users
 module.exports.create = function(request, response, next) {
