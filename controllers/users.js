@@ -1,10 +1,10 @@
 const User = require('../models/users');
 
-/*
+
 module.exports.index = function(request, response) {
-  response.redirect('/users/charlietirrell99');
+  response.redirect('/users');
 };
-*/
+
 
 module.exports.retrieve = function(request, response, next) {
   User.findById(request.params.id)
