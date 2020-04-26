@@ -18,7 +18,7 @@ module.exports.retrieve = function(request, response, next) {
 
   Promise.all(queries).then(function([list, listIDs]) {
     if (course) {
-      response.render('list/index', {list: list, listIDs: listIDs});
+      response.render('list/index/:id', {list: list, listIDs: listIDs});
     } else {
       next(); // No such list
     }

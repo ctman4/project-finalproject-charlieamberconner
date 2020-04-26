@@ -24,5 +24,7 @@ router.get('/users/:id', users.retrieve);
 // Handle list requests
 router.get('/lists', lists.index);
 
+router.get('/lists/:id', users.retrieve);
+
 
 module.exports = router;
