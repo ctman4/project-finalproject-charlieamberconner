@@ -18,6 +18,12 @@ module.exports.retrieve = function(request, response, next) {
 };
 */
 
+// POST /users
+module.exports.create = function(request, response, next) {
+  User.create(request.body)
+    .then(user => response.status(201).send(user.id))
+    .catch(error => next(error));
+};
 
 
 // POST /login (with a user ID in the request body)
