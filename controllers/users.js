@@ -21,7 +21,7 @@ module.exports.retrieve = function(request, response, next) {
 
 
 // POST /login (with a user ID in the request body)
-module.exports.index = function(request, response, next) {
+module.exports.retrieve = function(request, response, next) {
   User.findById(request.body.id)
     .then(function(user) {
       if (user) {
