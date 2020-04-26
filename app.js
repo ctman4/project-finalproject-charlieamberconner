@@ -50,6 +50,12 @@ app.get('/', function(request, response) {
   response.redirect('/lists');
 });
 
+// Make user data available in all views
+app.use(function(request, response, next) {
+  response.locals.user = request.session.user;
+  next();
+});
+
 // Route content requests
 app.use('/', router);
 

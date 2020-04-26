@@ -27,6 +27,14 @@
                         <div class="h5">@charlestirrell99</div>
                         <div class="h7 text-muted">Full Name : Charles Tirrell</div>
                     </div>
+                    <%_ if (!user) { -%>
+                      <form>
+                        <button type="submit">Login</button>
+                      </form>
+                    <%_ } else { -%>
+                      <p>Hello, <%= user.name -%>!</p>
+                      <a href="/logout">Logout</a>
+                    <%_ } -%>
                 </div>
             </div>
             <div class="col-md-6 gedf-main">
