@@ -39,7 +39,7 @@
               </ul>
             </p>
           <table>
-            <thead class="border-bottom"><h4 class="pl-0">Comments:</h4></thead
+            <thead><h4 class="pl-0 border-bottom">Comments:</h4></thead
             <%_ for (const com of list.comments) { -%>
               <tr>
                 <td class="font-weight-bold"><%= com[0] -%>: </td>
@@ -47,10 +47,15 @@
               </tr>
             <%_ } -%>
           </table>
+          <div class="input-group mb-3">
+            <input type="text" class="form-control">
+            <div class="input-group-append">
+              <span class="input-group-text">Comment</span>
+            </div>
+          </div>
         </div>
         <div class="card-footer">
             <a href="#" class="card-link"><i class="fa fa-gittip"></i> Deliver this list</a>
-            <a href="#" class="card-link"><i class="fa fa-comment"></i> Comment</a>
         </div>
     </div>
   </body>
