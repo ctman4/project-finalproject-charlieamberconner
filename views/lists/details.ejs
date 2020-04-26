@@ -1,6 +1,52 @@
 <html>
   <%- include('../head'); -%>
   <body>
-    <p><%= list.location -%> </p>
+    <div class="card gedf-card">
+        <div class="card-header">
+            <div class="d-flex justify-content-between align-items-center">
+                <div class="d-flex justify-content-between align-items-center">
+                    <div class="mr-2">
+                        <img class="rounded-circle" width="45" src="https://picsum.photos/50/50" alt="">
+                    </div>
+                    <div class="ml-2">
+                        <div class="h5 m-0">
+                          <%= list.customerID -%> </div>
+                        <div class="h7 text-muted"><%= list.CustomerName -%></div>
+                    </div>
+                </div>
+            </div>
+
+        </div>
+        <div class="card-body">
+            <div class="text-muted h7 mb-2"> <i class="fa fa-clock-o"></i><%= list.timePosted -%></div>
+            <a class="card-link" href="/lists/<%= list.id -%>" >
+                <h5 class="card-title">My List</h5>
+            </a>
+
+            <p class="card-text">
+              <ul>
+                <%_ for (const item of list.items) { -%>
+                  <li>
+                    <div class="checkbox">
+                      <label><input type="checkbox" value=""><%= item -%></label>
+                    </div>
+                  </li>
+                <%_ } -%>
+
+              </ul>
+            </p>
+          <h4 class="border pl-0">Comments:</h4>
+          <%_ for (const com of list.comments) { -%>
+            <tr>
+              <td class="font-weight-bold"><%= com[0] -%>: </td>
+              <td><%= com[1] -%></td>
+            </tr>
+          <%_ } -%>
+        </div>
+        <div class="card-footer">
+            <a href="#" class="card-link"><i class="fa fa-gittip"></i> Deliver this list</a>
+            <a href="#" class="card-link"><i class="fa fa-comment"></i> Comment</a>
+        </div>
+    </div>
   </body>
 </html>
