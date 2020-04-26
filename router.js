@@ -17,7 +17,7 @@ const authorize = function(request, response, next) {
 
 
 // Handle user requests
-router.get('/users', users.index);
+//router.get('/users', users.index);
 
 router.get('/users/:id', users.retrieve);
 
