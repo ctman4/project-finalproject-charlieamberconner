@@ -24,17 +24,15 @@
             <div class="col-md-3">
                 <div class="card">
                     <div class="card-body">
-                        <div class="h5">@charlestirrell99</div>
-                        <div class="h7 text-muted">Full Name : Charles Tirrell</div>
+                      <%_ if (!user) { -%>
+                        <form>
+                          <button href="/users">Login</button>
+                        </form>
+                      <%_ } else { -%>
+                        <p>Hello, <%= user.name -%>!</p>
+                        <a href="/logout">Logout</a>
+                      <%_ } -%>
                     </div>
-                    <%_ if (!user) { -%>
-                      <form>
-                        <button type="submit">Login</button>
-                      </form>
-                    <%_ } else { -%>
-                      <p>Hello, <%= user.name -%>!</p>
-                      <a href="/logout">Logout</a>
-                    <%_ } -%>
                 </div>
             </div>
             <div class="col-md-6 gedf-main">
