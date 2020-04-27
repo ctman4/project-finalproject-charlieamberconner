@@ -19,3 +19,12 @@ module.exports.retrieve = function(request, response, next) {
     }
   }).catch(error => next(error));
 };
+
+// POST /claim (with a user ID in the request body)
+module.exports.claim = function(request, response, next) {
+  List.findById(request.params.id)
+    .then(function(list) {
+      list.claimedBy= list;
+      response.status(200).end();
+    }).catch(error => next(error));
+};
