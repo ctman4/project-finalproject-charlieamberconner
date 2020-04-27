@@ -5,7 +5,6 @@ const mongoose = require('mongoose');
 //Define the schema
 const List = new mongoose.Schema({
   _id: String,
-  customerID: String,
   CustomerName: String,
   location: String,
   items: [String],
