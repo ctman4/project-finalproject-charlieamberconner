@@ -18,7 +18,7 @@ const authorize = function(request, response, next) {
 
 // Handle user requests
 // Handle home-page requests
-router.get('/', function(request, response) {
+router.get('/users', function(request, response) {
   response.render('index');
 });
 
