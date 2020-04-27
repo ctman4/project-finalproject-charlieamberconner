@@ -3,7 +3,11 @@ const List = require('../models/lists');
 
 
 module.exports.index = function(request, response) {
-  response.redirect('/users/' + request.session.user._id);
+  const order = request.query.sort || 'timePosted'; // Default to sort by timePosted
+
+  List.find().sort()
+    .then(lists => response.redirect('/users/' + request.session.user._id, {lists: lists}))
+    .catch(error => next(error));
 };
 
 
@@ -30,16 +34,4 @@ module.exports.login = function(request, response, next) {
         next(); // No such user
       }
     }).catch(error => next(error));
-};
-
-
-
-
-// GET /sections?sort=
-module.exports.mylists = function(request, response, next) {
-  const order = request.query.sort || 'timePosted'; // Default to sort by timePosted
-
-  List.find().sort()
-    .then(lists => response.render('lists/index', {lists: lists}))
-    .catch(error => next(error));
 };
