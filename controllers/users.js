@@ -1,5 +1,4 @@
 const User = require('../models/users');
-const List = require('../models/lists');
 
 
 module.exports.index = function(request, response) {
@@ -8,16 +7,10 @@ module.exports.index = function(request, response) {
 
 
 module.exports.retrieve = function(request, response, next) {
-  const order = request.query.sort || 'timePosted'; // Default to sort by timePosted
-
-  const queries = [
-    User.findById(request.params.id)
-    List.find().sort(order)
-  ];
-
-  Promise.all(queries).then(function([user, lists]) {  
+  User.findById(request.params.id)
+    .then(function(user) {
     if (user) {
-      response.render('users/index', {user: user, lists: lists});
+      response.render('users/index', {user: user);
     } else {
       next(); // No such user
     }
