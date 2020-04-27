@@ -9,25 +9,14 @@ const router = express.Router();
 router.get('/users', function(request, response) {
   response.render('/users/index', {users: users});
 });
-
 // Handle login requests
 router.post('/login', users.login);
-
 // Handle logout requests
 router.get('/logout', function(request, response) {
   request.session.user = undefined;
   response.redirect('/');
 });
 */
-
-// handle login requests
-router.post('/login', users.login);
-
-// handle logout requests
-router.get('/logout', function(request, response) {
-  request.session.user = undefined;
-  response.redirect('/');
-});
 
 router.get('/users', users.index);
 
