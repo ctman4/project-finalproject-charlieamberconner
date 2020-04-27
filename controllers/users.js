@@ -31,12 +31,3 @@ module.exports.login = function(request, response, next) {
       }
     }).catch(error => next(error));
 };
-
-// GET /sections?sort=
-module.exports.mylists = function(request, response, next) {
-  const order = request.query.sort || 'timePosted'; // Default to sort by timePosted
-
-  List.find().sort()
-    .then(lists => response.render('lists/index', {lists: lists}))
-    .catch(error => next(error));
-};
