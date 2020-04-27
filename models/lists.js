@@ -4,14 +4,14 @@ const mongoose = require('mongoose');
 
 //Define the schema
 const List = new mongoose.Schema({
-  _id: String,
+  title: String,
   customerID: String,
   CustomerName: String,
   location: String,
   items: [String],
   budget: String,
   timePosted: Date,
-  fulfilled: String,
+  claimedBy: String,
   comments: [[String]]
 });
 

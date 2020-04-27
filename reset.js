@@ -22,7 +22,7 @@ const List = new mongoose.Schema({
 //model a collection of Lists
 const lists = [
   new List({
-    _id: 'l1',
+    title: 'My List',
     customerID: 'charlestirrell99',
     customerName: 'Charles Tirrell',
     location: 'Marion, MA',
