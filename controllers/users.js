@@ -18,7 +18,6 @@ module.exports.retrieve = function(request, response, next) {
 };
 
 
-/*
 // POST /login (with a user ID in the request body)
 module.exports.login = function(request, response, next) {
   User.findById(request.body.id)
@@ -32,4 +31,3 @@ module.exports.login = function(request, response, next) {
       }
     }).catch(error => next(error));
 };
-*/
