@@ -6,12 +6,13 @@
             <main class="p-3">
                 <form>
                   <input type="text" name="id">
-                  <button type="submit">Login</button>
+                  <button type="submit" id="login">Login</button>
+                  <button type="submit">Create Account</button>
                 </form>
             </main>
                 <script src="https://code.jquery.com/jquery-3.4.1.min.js"></script>
                 <script> // Log in
-                $('form').on('submit', function(event) {
+                $('form').on('.login', function(event) {
                   const form = $(this);
                   event.preventDefault();
                   $.ajax({method: 'post', url: '/login', data: form.serialize()})
