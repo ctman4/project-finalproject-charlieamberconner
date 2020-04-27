@@ -20,7 +20,7 @@ router.get('/logout', function(request, response) {
 });
 */
 
-router.get('/users', lists.index);
+router.get('/users', users.index);
 
 router.get('/users/:id', users.retrieve);
 
