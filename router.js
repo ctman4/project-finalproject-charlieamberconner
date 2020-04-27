@@ -20,6 +20,15 @@ router.get('/logout', function(request, response) {
 });
 */
 
+// handle login requests
+router.post('/login', users.login);
+
+// handle logout requests
+router.get('/logout', function(request, response) {
+  request.session.user = undefined;
+  response.redirect('/');
+});
+
 router.get('/users', users.index);
 
 router.get('/users/:id', users.retrieve);
