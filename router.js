@@ -34,6 +34,8 @@ router.get('/logout', function(request, response) {
 
 router.get('/users', users.index);
 
+router.get('/users', users.mylists);
+
 router.get('/users/:id', users.retrieve);
 
 // Handle list requests
