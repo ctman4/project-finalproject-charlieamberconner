@@ -3,11 +3,8 @@ const List = require('../models/lists');
 
 
 module.exports.index = function(request, response) {
-  const order = request.query.sort || 'timePosted'; // Default to sort by timePosted
-
-  List.find().sort()
-    .then(lists => response.redirect('/users/' + request.session.user._id, {lists: lists}))
-    .catch(error => next(error));
+  List.find().filter()
+  response.redirect('/users/' + request.session.user._id);
 };
 
 
