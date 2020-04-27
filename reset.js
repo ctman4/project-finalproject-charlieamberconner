@@ -48,21 +48,21 @@ const User = new mongoose.Schema({
 const users = [
   new User({
     _id: 'charlietirrell99',
-    Name: 'Charles Tirrell',
+    name: 'Charles Tirrell',
     location: 'Marion, MA',
     phone: '5087285505'
   }),
 
   new User({
     _id: 'amberlapata1',
-    Name: 'Amber Lapata',
+    name: 'Amber Lapata',
     location: 'Boston, MA',
     phone: '5087281010'
   }),
 
   new User({
     _id: 'connershumway4',
-    Name: 'Conner Shumway',
+    name: 'Conner Shumway',
     location: 'Boston, MA',
     phone: '5087891234'
   })
