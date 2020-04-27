@@ -24,7 +24,7 @@ module.exports.retrieve = function(request, response, next) {
 module.exports.claim = function(request, response, next) {
   List.findById(request.params.id)
     .then(function(list) {
-      list.claimedBy= list;
+      request.list.claimedBy= list;
       response.status(200).end();
     }).catch(error => next(error));
 };
