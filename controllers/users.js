@@ -3,16 +3,21 @@ const List = require('../models/lists');
 
 
 module.exports.index = function(request, response) {
-  List.find().filter()
   response.redirect('/users/' + request.session.user._id);
 };
 
 
 module.exports.retrieve = function(request, response, next) {
-  User.findById(request.params.id)
-  .then(function(user) {
+  const order = request.query.sort || 'timePosted'; // Default to sort by timePosted
+
+  const queries = [
+    User.findById(request.params.id)
+    List.find().sort(order)
+  ];
+
+  Promise.all(queries).then(function([user, lists]) {  
     if (user) {
-      response.render('users/index', {user: user});
+      response.render('users/index', {user: user, lists: lists});
     } else {
       next(); // No such user
     }
