@@ -1,7 +1,7 @@
 const express = require('express');
 const users = require('./controllers/users');
 const lists = require('./controllers/lists');
-const User = require('../models/users');
+const User = require('./models/users');
 
 const router = express.Router();
 
