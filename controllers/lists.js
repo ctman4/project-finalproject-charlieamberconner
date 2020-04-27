@@ -20,6 +20,7 @@ module.exports.retrieve = function(request, response, next) {
   }).catch(error => next(error));
 };
 
+/*
 // POST /claim (with a user ID in the request body)
 module.exports.claim = function(request, response, next) {
   List.findById(request.params.id)
@@ -27,4 +28,12 @@ module.exports.claim = function(request, response, next) {
       request.list.claimedBy= list;
       response.status(200).end();
     }).catch(error => next(error));
+};
+*/
+module.exports.claim = function(request, response, next) {
+  request.body.prereqs = request.body.prereqs || []; // Replace undefined with [] to remove all prereqs
+
+  List.findByIdAndUpdate(request.params.id, request.body)
+    .then(list => list ? response.status(200).end() : next())
+    .catch(error => next(error));
 };
