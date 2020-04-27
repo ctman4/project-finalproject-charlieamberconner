@@ -2,7 +2,7 @@ const User = require('../models/users');
 
 
 module.exports.index = function(request, response) {
-  response.redirect('/users/charlietirrell99');
+  response.redirect('/users/' + request.session.user._id);
 };
 
 
