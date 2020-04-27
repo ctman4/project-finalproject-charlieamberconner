@@ -41,7 +41,7 @@ router.get('/lists', lists.index);
 
 router.get('/lists/:id', lists.retrieve);
 
-router.post('/lists/:id', lists.claim);
+router.put('/lists/:id', lists.claim);
 
 
 module.exports = router;

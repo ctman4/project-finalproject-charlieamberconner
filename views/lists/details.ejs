@@ -53,13 +53,13 @@
           </div>
         </div>
         <div class="card-footer">
+          <div class="row">
             <button id="claim">Claim this List</button>
             <script src="https://code.jquery.com/jquery-3.4.1.min.js"></script>
             <script>
               $('#claim').on('click', function(event) {
-                const user = user._id
                 event.preventDefault();
-                $.ajax({method: 'post', url: '/lists/:id', data: user})
+                $.ajax({method: 'put', url: '/lists/<%= list._id -%>'})
                   .done(() => window.location.reload())
                   .fail(error => alert('Could not claim List'));
               })
@@ -69,6 +69,7 @@
             <%_ } else { -%>
               <p>List Not Claimed</p>
             <%_ } -%>
+          </div>
         </div>
     </div>
   </body>

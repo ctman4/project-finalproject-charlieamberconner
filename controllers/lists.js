@@ -31,9 +31,8 @@ module.exports.claim = function(request, response, next) {
 };
 */
 module.exports.claim = function(request, response, next) {
-  request.body.prereqs = request.body.prereqs || []; // Replace undefined with [] to remove all prereqs
 
-  List.findByIdAndUpdate(request.params.id, request.body)
+  List.findByIdAndUpdate(request.params.id, {claimedBy: request.session.user._id})
     .then(list => list ? response.status(200).end() : next())
     .catch(error => next(error));
 };
