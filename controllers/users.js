@@ -23,7 +23,7 @@ module.exports.login = function(request, response, next) {
   User.findById(request.body.id)
     .then(function(user) {
       if (user) {
-        response.render('index', {user: user});
+        response.render('/index', {user: user});
         request.session.user = user;
         response.status(200).end();
       } else {
