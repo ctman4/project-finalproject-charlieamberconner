@@ -18,7 +18,7 @@ app.use(express.urlencoded({extended: false}));
 
 // Generate a session for each client
 app.use(session({
-  name: 'miniproject', // Name of client cookies
+  name: 'grocerylists', // Name of client cookies
   secret: 'temporary', // Password for client cookies
   resave: false, // Recommended setting
   saveUninitialized: false // Recommended setting
@@ -39,7 +39,7 @@ app.use(function(request, response, next) {
 
 // Redirect from the home page
 app.get('/', function(request, response) {
-  response.redirect('/lists');
+  response.redirect('/index');
 });
 
 // Make user data available in all views
