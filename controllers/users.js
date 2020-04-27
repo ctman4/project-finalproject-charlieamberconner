@@ -1,5 +1,4 @@
 const User = require('../models/users');
-const List = require('../models/lists');
 
 
 module.exports.index = function(request, response) {
