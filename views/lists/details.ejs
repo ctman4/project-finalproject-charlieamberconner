@@ -58,7 +58,7 @@
             <script>
               $('#claim').on('click', function(event) {
                 event.preventDefault();
-                $.ajax({method: 'post', url: '/lists/:id', data: list.claimedBy})
+                $.ajax({method: 'post', url: '/lists/:id', data: user._id})
                   .done(() => window.location.reload())
                   .fail(error => alert('Could not claim List'));
               })
