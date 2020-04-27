@@ -18,6 +18,11 @@ router.get('/logout', function(request, response) {
 });
 */
 
+// Handle home-page requests
+router.get('/', function(request, response) {
+  response.render('index');
+});
+
 // Handle login requests
 router.post('/login', users.login);
 
