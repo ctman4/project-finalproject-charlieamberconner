@@ -1,8 +1,8 @@
 const User = require('../models/users');
 
-/*
+
 module.exports.index = function(request, response) {
-  response.redirect('/users');
+  response.redirect('/users/charlestirrell99');
 };
 
 
@@ -16,9 +16,9 @@ module.exports.retrieve = function(request, response, next) {
     }
   }).catch(error => next(error));
 };
-*/
 
 
+/*
 // POST /login (with a user ID in the request body)
 module.exports.login = function(request, response, next) {
   User.findById(request.body.id)
@@ -32,3 +32,4 @@ module.exports.login = function(request, response, next) {
       }
     }).catch(error => next(error));
 };
+*/

@@ -1,24 +1,11 @@
 const express = require('express');
 const users = require('./controllers/users');
 const lists = require('./controllers/lists');
-const User = require('./models/users');
 
 const router = express.Router();
 
 /*
-// Check for admin status
-const authorize = function(request, response, next) {
-  if (request.session.admin) {
-    next(); // Fulfill the request
-  } else {
-    response.status(401).end();
-  }
-};
-*/
-
-
 // Handle user requests
-// Handle home-page requests
 router.get('/users', function(request, response) {
   response.render('/users/index', {users: users});
 });
@@ -31,6 +18,11 @@ router.get('/logout', function(request, response) {
   request.session.user = undefined;
   response.redirect('/');
 });
+*/
+
+router.get('/users', lists.index);
+
+router.get('/users/:id', users.retrieve);
 
 // Handle list requests
 router.get('/lists', lists.index);
