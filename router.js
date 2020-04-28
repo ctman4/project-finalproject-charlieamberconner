@@ -36,7 +36,7 @@ router.get('/create', function(request, response) {
 });
 
 // create new user
-router.post('/users', users.create);
+router.post('/create', users.create);
 
 // Handle login requests
 router.post('/login', users.login);
