@@ -38,9 +38,9 @@
                   $.ajax({method: 'post', url: '/users', data: new_user})
                     .done(function(id) {
                       form.attr('id', id);
+                      window.location.assign('/lists');
                     })
                     .fail(error => alert(error.responseText));
-                    window.location.assign('/lists');
                 })
                 </script>
               </body>
