@@ -28,11 +28,22 @@
                 $('form').on('submit', '.create', function(event) {
                   const form = $(this);
                   event.preventDefault();
-                  var name = $("#name").val();
-                  var id = $("#id").val();
-                  var location = $("#location").val();
-                  var phone = $("#phone").val();
-                  
+                  var newname = $("#name").val();
+                  var newid = $("#id").val();
+                  var newlocation = $("#location").val();
+                  var newphone = $("#phone").val();
+
+                  //var new_user = {_id: newid, name: newname, location: newlocation, phone: newphone}
+                  $.ajax({
+                    type:'POST',
+                    url: '/users',
+                    data: {_id: newid, name: newname, location: newlocation, phone: newphone}
+                  }).done(function(response){
+                    console.log(response);
+                    window.location.replace('/');
+                  }).fail(function(response){
+                    console.log("Could not create account");
+            });
                 </script>
         </body>
     </html>
