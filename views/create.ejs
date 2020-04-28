@@ -28,13 +28,13 @@
                 $(document).on('click', '.create', function(event) {
                   const form = $(this).closest('form');
                   event.preventDefault();
-                  //var newname = $("#name").val();
-                  //var newid = $("#id").val();
-                  //var newlocation = $("#location").val();
-                  //var newphone = $("#phone").val();
-                  //var new_user = {_id: newid, name: newname, location: newlocation, phone: newphone}
+                  var newname = $("#name").val();
+                  var newid = $("#id").val();
+                  var newlocation = $("#location").val();
+                  var newphone = $("#phone").val();
+                  var new_user = {_id: newid, name: newname, location: newlocation, phone: newphone}
 
-                  $.ajax({method: 'post', url: '/users', data: form.serialize()})
+                  $.ajax({method: 'post', url: '/users', data: new_user})
                     .done(function(id) {
                       form.attr('id', id);
                       form.find('.create').removeClass('create').addClass('update');
