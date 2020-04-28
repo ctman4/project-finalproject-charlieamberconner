@@ -45,12 +45,15 @@
               </tr>
             <%_ } -%>
           </table>
-          <div class="input-group mt-3">
-            <input type="text" class="form-control">
-            <div class="input-group-append">
-              <button class="input-group-text">Comment</button>
+          <form>
+            <div class="input-group mt-3">
+              <input type="text" class="form-control">
+              <div class="input-group-append">
+                <button type="submit" class="input-group-text">Comment</button>
+              </div>
             </div>
-          </div>
+          </form>
+
         </div>
         <div class="card-footer">
           <div class="row">
@@ -62,6 +65,13 @@
                 $.ajax({method: 'put', url: '/lists/<%= list._id -%>'})
                   .done(() => window.location.reload())
                   .fail(error => alert('Could not claim List'));
+              })
+              $('form').on('submit', function(event) {
+                const form = $(this);
+                event.preventDefault();
+                $.ajax({method: 'put', url: '/lists/<%= list._id -%>', data: form.serialize()})
+                  .done(() => window.location.reload())
+                  .fail(error => alert('Could not comment'));
               })
             </script>
             <%_ if (list.claimedBy) { -%>
