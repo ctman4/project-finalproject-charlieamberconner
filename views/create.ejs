@@ -25,14 +25,19 @@
             </main>
                 <script src="https://code.jquery.com/jquery-3.4.1.min.js"></script>
                 <script>
-                $('form').on('submit', function(event) {
+                $('form').on('submit', '.create', function(event) {
                   const form = $(this);
                   event.preventDefault();
                   var name = $("#name").val();
                   var id = $("#id").val();
                   var location = $("#location").val();
                   var phone = $("#phone").val();
-                  
+                  $.ajax({method: 'post', url: '/users', data: form.serialize()})
+                    .done(function(id) {
+                      form.attr('id', id);
+                      form.find('.create').removeClass('create').addClass('update');
+                    })
+                    .fail(error => alert(error.responseText));
                 })
                 </script>
         </body>

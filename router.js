@@ -40,7 +40,7 @@ router.get('/logout', function(request, response) {
   response.redirect('/');
 });
 
-
+// handle user requests
 router.get('/users', users.index);
 
 router.get('/users/:id', users.retrieve);
