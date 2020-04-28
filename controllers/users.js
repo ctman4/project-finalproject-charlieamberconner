@@ -33,5 +33,5 @@ module.exports.login = function(request, response, next) {
 
 // POST /create
 module.exports.create = function(request, response, next) {
-  response.redirect('/users/create');
+  response.redirect('/create');
 };
