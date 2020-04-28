@@ -7,19 +7,19 @@
                 <form>
                   <input type="text" name="id">
                   <button type="submit">Login</button>
-                  <button type="button">Create an account</button>
+                  <button type="button" id="create">Create an account</button>
                 </form>
             </main>
                 <script src="https://code.jquery.com/jquery-3.4.1.min.js"></script>
                 <script> // Log in
-                $('form').on('submit', function(event) {
+                $('submit').on('click', function(event) {
                   const form = $(this);
                   event.preventDefault();
                   $.ajax({method: 'post', url: '/login', data: form.serialize()})
                   .done(() => window.location.replace('/lists'))
                   .fail(error => alert('Could not log in.'));
                 })
-                $(':button').on('click', function(event) {
+                $('#create').on('click', function(event) {
                   const form = $(this);
                   event.preventDefault();
                   window.location.replace('/create');
