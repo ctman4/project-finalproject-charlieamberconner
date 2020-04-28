@@ -30,3 +30,10 @@ module.exports.login = function(request, response, next) {
       }
     }).catch(error => next(error));
 };
+
+// POST /users (with the new user in the request body)
+module.exports.create = function(request, response, next) {
+  User.create(request.body)
+    .then(user => response.status(201).send(user.id))
+    .catch(error => next(error));
+};

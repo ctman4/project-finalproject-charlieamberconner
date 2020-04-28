@@ -28,6 +28,9 @@ router.get('/create', function(request, response) {
   response.render('create');
 });
 
+// create new user
+router.post('/users', authorize, users.create);
+
 // Handle login requests
 router.post('/login', users.login);
 
