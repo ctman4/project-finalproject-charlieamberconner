@@ -25,8 +25,8 @@
             </main>
                 <script src="https://code.jquery.com/jquery-3.4.1.min.js"></script>
                 <script>
-                $('form').on('submit', '.create', function(event) {
-                  const form = $(this);
+                $(document).on('click', '.create', function(event) {
+                  const form = $(this).closest('form');
                   event.preventDefault();
                   //var newname = $("#name").val();
                   //var newid = $("#id").val();
