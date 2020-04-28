@@ -4,12 +4,8 @@ const mongoose = require('mongoose');
 
 //Define the schema
 const List = new mongoose.Schema({
-<<<<<<< HEAD
-  _id: String,
-=======
   title: String,
   customerID: String,
->>>>>>> 688718949af43623ca71175ab2c1cab147d4ce0a
   CustomerName: String,
   location: String,
   items: [String],
