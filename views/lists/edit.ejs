@@ -1,0 +1,8 @@
+<%_ for (const list of lists) { -%>
+  <form id="<%= list.id -%>" class="form-inline">
+    <input type="text" name="items" value="<%= list.items -%>" class="form-control form-control-sm m-1">
+    <button class="update btn btn-sm btn-primary m-1">Save</button>
+    <button class="delete btn btn-sm btn-primary m-1">Delete</button>
+  </form>
+<%_ } -%>
+<button id="insert" class="btn btn-sm btn-primary m-1">New List</button>
