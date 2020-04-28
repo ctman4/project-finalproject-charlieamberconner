@@ -32,7 +32,7 @@ router.get('/', function(request, response) {
 
 // handle create page requests
 router.get('/create', function(request, response) {
-  response.redirect('/');
+  response.render('/create');
 });
 
 // create new user
