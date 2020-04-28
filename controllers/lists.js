@@ -58,7 +58,7 @@ module.exports.claim = function(request, response, next) {
     .catch(error => next(error));
 };
 
-module.exports.claim = function(request, response, next) {
+module.exports.comment = function(request, response, next) {
 
   List.findByIdAndUpdate(request.params.id, {comments: comments.push([request.session.user._id, request.body])})
     .then(list => list ? response.status(200).end() : next())
