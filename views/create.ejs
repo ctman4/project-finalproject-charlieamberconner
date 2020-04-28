@@ -33,17 +33,9 @@
                   var newlocation = $("#location").val();
                   var newphone = $("#phone").val();
 
-                  //var new_user = {_id: newid, name: newname, location: newlocation, phone: newphone}
-                  $.ajax({
-                    type:'POST',
-                    url: '/users',
-                    data: {_id: newid, name: newname, location: newlocation, phone: newphone}
-                  }).done(function(response){
-                    console.log(response);
-                    window.location.replace('/');
-                  }).fail(function(response){
-                    console.log("Could not create account");
-                  })
+                  var new_user = {_id: newid, name: newname, location: newlocation, phone: newphone}
+                  
+
                 })
                 </script>
               </body>
