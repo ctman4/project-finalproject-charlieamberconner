@@ -23,6 +23,11 @@ router.get('/', function(request, response) {
   response.render('index');
 });
 
+
+router.get('/create', function(request, response) {
+  response.render('create');
+});
+
 // Handle login requests
 router.post('/login', users.login);
 
