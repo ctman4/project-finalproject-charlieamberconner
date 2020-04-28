@@ -34,6 +34,6 @@ module.exports.login = function(request, response, next) {
 // POST /users (with the new user in the request body)
 module.exports.create = function(request, response, next) {
   User.create(request.body)
-    .then(user => response.status(201).send(user.id))
+    .then(user => response.status(201).end())
     .catch(error => next(error));
 };

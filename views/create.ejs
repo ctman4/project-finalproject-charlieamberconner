@@ -11,7 +11,7 @@
                   <input type="text" id="name" name="name"><br>
 
                   <label for="id">ID:</label><br>
-                  <input type="text" id="id" name="id"><br>
+                  <input type="text" id="id" name="_id"><br>
 
                   <label for="location">Location:</label><br>
                   <input type="text" id="location" name="location"><br>
@@ -19,7 +19,7 @@
                   <label for="phone">Phone Number:</label><br>
                   <input type="text" id="phone" name="phone"><br>
 
-                  <button class="submit m-3">Done</button>
+                  <button class="create m-3">Done</button>
 
                 </form>
             </main>
@@ -28,17 +28,9 @@
                 $(document).on('click', '.create', function(event) {
                   const form = $(this).closest('form');
                   event.preventDefault();
-                  //var newname = $("#name").val();
-                  //var newid = $("#id").val();
-                  //var newlocation = $("#location").val();
-                  //var newphone = $("#phone").val();
-                  //var new_user = {_id: newid, name: newname, location: newlocation, phone: newphone}
 
                   $.ajax({method: 'post', url: '/users', data: form.serialize()})
-                    .done(function(id) {
-                      form.attr('id', id);
-                      form.find('.create').removeClass('create').addClass('update');
-                    })
+                    .done(() => window.location.replace('/'))
                     .fail(error => alert(error.responseText));
                   })
                 </script>
