@@ -32,6 +32,8 @@ router.get('/logout', function(request, response) {
   response.redirect('/');
 });
 
+router.get('/create', users.create);
+
 router.get('/users', users.index);
 
 router.get('/users/:id', users.retrieve);
