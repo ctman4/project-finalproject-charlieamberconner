@@ -37,7 +37,6 @@
                   $.ajax({method: 'post', url: '/users', data: form.serialize()})
                     .done(function(id) {
                       form.attr('id', id);
-                      window.location.replace('index');
                     })
                 })
                 </script>
