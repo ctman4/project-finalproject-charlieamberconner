@@ -24,8 +24,10 @@
             <div class="col-md-3">
                 <div class="card">
                     <div class="card-body">
+                      <!--
                       <p><%= user.name -%></p>
                       <p><%= user._id -%></p>
+                    -->
                       <a href="/logout">Logout</a>
                     </div>
                 </div>
@@ -50,6 +52,8 @@
                             <div class="tab-pane fade show active" id="posts" role="tabpanel" aria-labelledby="posts-tab">
                                 <div class="form-group">
                                     <label class="sr-only" for="message">post</label>
+
+                                    <!--
                                     <form id ="create" class="form-inline">
                                       <textarea class="form-control" id="message" name="items" rows="3" placeholder="Enter list items"></textarea>
                                       <div class="btn-toolbar justify-content-between">
@@ -58,6 +62,9 @@
                                           </div>
                                       </div>
                                     </form>
+                                  -->
+                                  <%- include('/edit.ejs'); -%>
+
                                 </div>
                             </div>
                         </div>
