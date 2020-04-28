@@ -19,10 +19,21 @@
                   <label for="phone">Phone Number:</label><br>
                   <input type="text" id="phone" name="phone"><br>
 
-                  <button class="submit">Done</button>
+                  <button class="submit p-3">Done</button>
 
                 </form>
             </main>
                 <script src="https://code.jquery.com/jquery-3.4.1.min.js"></script>
+                <script>
+                $('form').on('submit', function(event) {
+                  const form = $(this);
+                  event.preventDefault();
+                  var name = $("#name").val();
+                  var id = $("#id").val();
+                  var location = $("#location").val();
+                  var phone = $("#phone").val();
+                  console.log(name, id, location, phone);
+                })
+                </script>
         </body>
     </html>
