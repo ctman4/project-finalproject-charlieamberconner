@@ -69,15 +69,15 @@
               $('form').on('submit', function(event) {
                 const form = $(this);
                 event.preventDefault();
-                $.ajax({method: 'put', url: '/lists/comments/<%= list._id -%>', data: form.serialize()})
+                $.ajax({method: 'put', url: '/lists/<%= list._id -%>', data: form.serialize()})
                   .done(() => window.location.reload())
                   .fail(error => alert('Could not comment'));
               })
             </script>
             <%_ if (list.claimedBy) { -%>
-              <p>Claimed By: <%= list.claimedBy -%></p>
+              <p class="text-warning">Claimed By: <%= list.claimedBy -%></p>
             <%_ } else { -%>
-              <p>List Not Claimed</p>
+              <p class="text-primary">List Not Claimed</p>
             <%_ } -%>
           </div>
         </div>
