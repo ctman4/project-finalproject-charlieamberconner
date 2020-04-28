@@ -53,7 +53,7 @@ router.get('/lists/:id', lists.retrieve);
 
 router.put('/lists/:id', lists.claim);
 
-router.put('/lists/:id/comments', lists.comment);
+router.put('/lists/comments/:id', lists.comment);
 
 router.post('/lists', lists.create);
 router.delete('/lists/:id', lists.delete);

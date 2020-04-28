@@ -69,7 +69,7 @@
               $('form').on('submit', function(event) {
                 const form = $(this);
                 event.preventDefault();
-                $.ajax({method: 'put', url: '/lists/<%= list._id -%>/comments', data: form.serialize()})
+                $.ajax({method: 'put', url: '/lists/comments/<%= list._id -%>', data: form.serialize()})
                   .done(() => window.location.reload())
                   .fail(error => alert('Could not comment'));
               })
