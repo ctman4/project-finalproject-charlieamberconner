@@ -55,7 +55,6 @@ router.put('/lists/:id', lists.claim);
 
 router.post('/lists', lists.create);
 router.delete('/lists/:id', lists.delete);
-router.put('/lists/:id', lists.update);
 
 
 module.exports = router;

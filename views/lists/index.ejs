@@ -92,7 +92,7 @@
                                   <h5 class="card-title"><%= list.title -%></h5>
                               </a>
                           <div class="card-footer">
-                              <a href="#" class="card-link"><i class="fa fa-gittip"></i>Deliver this list</a>
+                              <button id="claim">Claim this List</button>
                               <%_ if (list.claimedBy) { -%>
                                 <p class="text-warning">Claimed By: <%= list.claimedBy -%></p>
                               <%_ } else { -%>
