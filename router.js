@@ -52,9 +52,9 @@ router.get('/lists/:id', lists.retrieve);
 
 router.put('/lists/:id', lists.claim);
 
-router.post('/lists', authorize, lists.create);
-router.delete('/lists/:id', authorize, lists.delete);
-router.put('/lists/:id', authorize, lists.update);
+router.post('/lists', lists.create);
+router.delete('/lists/:id', lists.delete);
+router.put('/lists/:id', lists.update);
 
 
 module.exports = router;
