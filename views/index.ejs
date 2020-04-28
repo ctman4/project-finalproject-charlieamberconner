@@ -22,9 +22,7 @@
                 $('form').on('button', function(event) {
                   const form = $(this);
                   event.preventDefault();
-                  $.ajax({method: 'GET', url: '/users/create', data: form.serialize()})
-                  .done(() => window.location.replace('/users/create'))
-                  .fail(error => alert('error.'));
+                  console.log("button clicked");
                 })
                 </script>
         </body>
