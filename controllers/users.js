@@ -37,10 +37,3 @@ module.exports.create = function(request, response, next) {
     .then(user => response.status(201).send(user.id))
     .catch(error => next(error));
 };
-
-// DELETE /courses/:id
-module.exports.delete = function(request, response, next) {
-  User.findByIdAndDelete(request.params.id)
-    .then(user => user ? response.status(200).end() : next())
-    .catch(error => next(error));
-};

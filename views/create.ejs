@@ -32,13 +32,7 @@
                   var id = $("#id").val();
                   var location = $("#location").val();
                   var phone = $("#phone").val();
-                  $.ajax({method: 'post', url: '/users', data: form.serialize()})
-                    .done(function(id) {
-                      form.attr('id', id);
-                      form.find('.create').removeClass('create').addClass('update');
-                    })
-                    .fail(error => alert(error.responseText));
-                })
+                  
                 </script>
         </body>
     </html>
