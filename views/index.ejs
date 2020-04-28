@@ -12,7 +12,7 @@
             </main>
                 <script src="https://code.jquery.com/jquery-3.4.1.min.js"></script>
                 <script> // Log in
-                $('submit').on('click', function(event) {
+                $('form').on('submit', function(event) {
                   const form = $(this);
                   event.preventDefault();
                   $.ajax({method: 'post', url: '/login', data: form.serialize()})
