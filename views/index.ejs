@@ -22,7 +22,10 @@
                 $('form').on('button', function(event) {
                   const form = $(this);
                   event.preventDefault();
-                  window.location.href = '/users/create';
+                  $.ajax({type: "GET", url: '/users/create', success: function (data) {
+                     window.location.href = data.redirecturl},
+                     error: function (httpRequest, textStatus, errorThrown) {
+                     alert("Error: " + textStatus + " " + errorThrown + " " + httpRequest)}});
                 })
                 </script>
         </body>
