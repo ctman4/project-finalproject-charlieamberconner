@@ -33,13 +33,5 @@ module.exports.login = function(request, response, next) {
 
 // POST /create
 module.exports.create = function(request, response, next) {
-  User.findById(request.body.id)
-    .then(function(user) {
-      if (user) {
-        request.session.user = user;
-        response.status(200).end();
-      } else {
-        next(); // No such user
-      }
-    }).catch(error => next(error));
+  response.redirect('/users/create' + request.session.user._id);
 };
