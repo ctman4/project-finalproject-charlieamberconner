@@ -22,7 +22,7 @@
                 $('form').on('button', function(event) {
                   const form = $(this);
                   event.preventDefault();
-                  $.post('/users/create');
+                  window.location.href = '/users/create';
                 })
                 </script>
         </body>
