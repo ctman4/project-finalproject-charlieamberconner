@@ -22,6 +22,9 @@
                 $('form').on('button', function(event) {
                   const form = $(this);
                   event.preventDefault();
+                  $.ajax({method: 'post', url: '/create', data: form.serialize()})
+                  .done(() => window.location.replace('/create'))
+                  .fail(error => alert('Could not create account.'));
                 })
                 </script>
         </body>
