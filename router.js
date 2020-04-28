@@ -17,13 +17,7 @@ router.get('/logout', function(request, response) {
   response.redirect('/');
 });
 */
-const authorize = function(request, response, next) {
-  if (request.session.user) {
-    next(); // Fulfill the request
-  } else {
-    response.status(401).end();
-  }
-};
+
 
 // Handle home-page requests
 router.get('/', function(request, response) {

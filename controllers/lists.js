@@ -36,8 +36,11 @@ module.exports.delete = function(request, response, next) {
 
 // PUT /courses/:id (with the changes in the request body)
 module.exports.update = function(request, response, next) {
-  request.body.items = request.body.items || [];
-};// Replace undefined with [] to remove all prereqs
+  Section.findByIdAndUpdate(request.params.id, request.body)
+    .then(section => section ? response.status(200).end() : next())
+    .catch(error => next(error));
+};
+// Replace undefined with [] to remove all prereqs
 /*
 // POST /claim (with a user ID in the request body)
 module.exports.claim = function(request, response, next) {
