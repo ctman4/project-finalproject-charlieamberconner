@@ -30,8 +30,3 @@ module.exports.login = function(request, response, next) {
       }
     }).catch(error => next(error));
 };
-
-// POST /create
-module.exports.create = function(request, response, next) {
-  response.redirect('/create');
-};
