@@ -23,8 +23,6 @@
     $.ajax({method: 'post', url: '/lists', data: form.serialize()})
       .done(function(id) {
         form.attr('id', id);
-        form.find('.create').removeClass('create').addClass('update');
-        form.find('.uninsert').removeClass('uninsert').addClass('delete');
       })
       .fail(error => alert(error.responseText));
   });
