@@ -2,7 +2,7 @@ const List = require('../models/lists');
 
 // GET /sections?sort=
 module.exports.index = function(request, response, next) {
-  const order = request.query.sort || 'timePosted'; // Default to sort by course
+  const order = request.query.sort || 'timePosted'; // Default to sort by timePosted
 
   List.find().sort()
     .then(lists => response.render('lists/index', {lists: lists}))
@@ -18,4 +18,21 @@ module.exports.retrieve = function(request, response, next) {
       next(); // No such list
     }
   }).catch(error => next(error));
+};
+
+/*
+// POST /claim (with a user ID in the request body)
+module.exports.claim = function(request, response, next) {
+  List.findById(request.params.id)
+    .then(function(list) {
+      request.list.claimedBy= list;
+      response.status(200).end();
+    }).catch(error => next(error));
+};
+*/
+module.exports.claim = function(request, response, next) {
+
+  List.findByIdAndUpdate(request.params.id, {claimedBy: request.session.user._id})
+    .then(list => list ? response.status(200).end() : next())
+    .catch(error => next(error));
 };

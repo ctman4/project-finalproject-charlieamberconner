@@ -5,7 +5,7 @@ const mongoose = require('mongoose');
 //define the schema
 const User = new mongoose.Schema({
   _id: String,
-  Name: String,
+  name: String,
   location: String,
   phone: Number
 });

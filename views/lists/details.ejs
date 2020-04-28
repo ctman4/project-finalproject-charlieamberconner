@@ -53,7 +53,23 @@
           </div>
         </div>
         <div class="card-footer">
-            <a href="#" class="card-link"><i class="fa fa-gittip"></i> Deliver this list</a>
+          <div class="row">
+            <button id="claim">Claim this List</button>
+            <script src="https://code.jquery.com/jquery-3.4.1.min.js"></script>
+            <script>
+              $('#claim').on('click', function(event) {
+                event.preventDefault();
+                $.ajax({method: 'put', url: '/lists/<%= list._id -%>'})
+                  .done(() => window.location.reload())
+                  .fail(error => alert('Could not claim List'));
+              })
+            </script>
+            <%_ if (list.claimedBy) { -%>
+              <p>Claimed By: <%= list.claimedBy -%></p>
+            <%_ } else { -%>
+              <p>List Not Claimed</p>
+            <%_ } -%>
+          </div>
         </div>
     </div>
   </body>
