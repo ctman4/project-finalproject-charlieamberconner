@@ -19,7 +19,7 @@
                   .done(() => window.location.replace('/lists'))
                   .fail(error => alert('Could not log in.'));
                 })
-                $('form').on('button', function(event) {
+                $('form').on(':button', function(event) {
                   const form = $(this);
                   event.preventDefault();
                   console.log("button clicked");
