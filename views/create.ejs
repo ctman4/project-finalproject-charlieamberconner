@@ -37,8 +37,11 @@
                   $.ajax({method: 'post', url: '/users', data: form.serialize()})
                     .done(function(id) {
                       form.attr('id', id);
+                      form.find('.create').removeClass('create').addClass('update');
+                      window.location.assign('index');
                     })
-                })
+                    .fail(error => alert(error.responseText));
+                  })
                 </script>
               </body>
             </html>
