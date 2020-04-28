@@ -34,7 +34,7 @@
                   //var newphone = $("#phone").val();
                   //var new_user = {_id: newid, name: newname, location: newlocation, phone: newphone}
 
-                  $.ajax({method: 'post', url: '/users', data: form.serialize()})
+                  $.ajax({method: 'post', url: 'create', data: form.serialize()})
                     .done(function(id) {
                       form.attr('id', id);
                     })
