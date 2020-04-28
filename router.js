@@ -23,7 +23,7 @@ router.get('/', function(request, response) {
   response.render('index');
 });
 
-
+// handle create page requests
 router.get('/create', function(request, response) {
   response.render('create');
 });
