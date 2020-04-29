@@ -26,23 +26,25 @@ module.exports.create = function(request, response, next) {
   var myJSON = JSON.stringify(request.body);
   const li = myJSON.split(',');
   List.create({items: li, customerID: request.session.user._id})
-    .then(course => response.status(201).send(list.id))
+    .then(list => response.status(201).send(list.id))
     .catch(error => next(error));
 };
 
 // DELETE /courses/:id
 module.exports.delete = function(request, response, next) {
   List.findByIdAndDelete(request.params.id)
-    .then(course => list ? response.status(200).end() : next())
+    .then(list => list ? response.status(200).end() : next())
     .catch(error => next(error));
 };
 
 // PUT /courses/:id (with the changes in the request body)
+/*
 module.exports.update = function(request, response, next) {
   Section.findByIdAndUpdate(request.params.id, request.body)
     .then(section => section ? response.status(200).end() : next())
     .catch(error => next(error));
 };
+*/
 // Replace undefined with [] to remove all prereqs
 /*
 // POST /claim (with a user ID in the request body)
