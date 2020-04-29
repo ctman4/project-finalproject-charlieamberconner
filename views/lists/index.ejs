@@ -98,14 +98,11 @@
                               <div class="text-muted h7 mb-2"> <i class="fa fa-clock-o"></i>
                                 <%= list.timePosted.getMonth() -%>
                                 <%= list.timePosted.getDate() -%>
-                                <%=
-                                if (list.timePosted.getHours() < 12) {
-                                  list.timePosted.getHours()%12 +":"+ list.timePosted.getMinutes() + " AM"
-                                }
-                                else {
-                                  list.timePosted.getHours()%12 +":"+ list.timePosted.getMinutes() + " PM"
-                                }
-                                -%>
+                                <%= if (list.timePosted.getHours() < 12) { -%>
+                                <%= list.timePosted.getHours()%12 +":"+ list.timePosted.getMinutes() + " AM" -%>
+                                <%= } else { -%>
+                                <%= list.timePosted.getHours()%12 +":"+ list.timePosted.getMinutes() + " PM" -%>
+                                <%_ } -%>
                               </div>
                               <a class="card-link" href="/lists/<%= list.id -%>" >
                                   <h5 class="card-title"><%= list.title -%></h5>
