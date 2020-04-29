@@ -6,8 +6,6 @@ const mongoose = require('mongoose');
 const List = new mongoose.Schema({
   title: String,
   customerID: String,
-  CustomerName: String,
-  location: String,
   items: [String],
   budget: String,
   timePosted: Date,

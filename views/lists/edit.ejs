@@ -3,6 +3,14 @@
   <label for="name">List Items:</label><br>
   <input type="text" id="items" name="items"><br>
 
-  <button class="create m-3">post</button>
+  <button id="create" class="create m-3">post</button>
 
 </form>
+<script>
+  $('#create').on('click', function(event) {
+    event.preventDefault();
+    $.ajax({method: 'post', url: '/lists', data: form.serialize()})
+      .done(() => window.location.reload())
+      .fail(error => alert('Could not claim List'));
+  })
+</script>
