@@ -8,6 +8,7 @@
 </form>
 <script>
   $('#create').on('click', function(event) {
+    const form = $(this);
     event.preventDefault();
     $.ajax({method: 'post', url: '/lists', data: form.serialize()})
       .done(() => window.location.reload())
