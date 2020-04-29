@@ -94,7 +94,7 @@
                           </div>
                           <div class="card-body">
                               <div class="text-muted h7 mb-2"> <i class="fa fa-clock-o"></i>
-                                <%= JSON.stringify(list.timePosted.split("-")) -%>
+                                <%= JSON.stringify(list.timePosted).split("-") -%>
 
                                 <%_ if (list.timePosted.getHours() < 12) { -%>
                                   <%= list.timePosted.getHours()%12 +":"+ list.timePosted.getMinutes() +"AM" -%>
