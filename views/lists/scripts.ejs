@@ -34,7 +34,7 @@
     event.preventDefault();
 
     $.ajax({method: 'post', url: '/lists', data: form.serialize()})
-      .done(() => window.location.replace('/'))
+      .done(() => window.location.reload())
       .fail(error => alert(error.responseText));
     })
 

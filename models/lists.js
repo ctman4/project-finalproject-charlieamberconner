@@ -12,6 +12,7 @@ const List = new mongoose.Schema({
   budget: String,
   timePosted: Date,
   claimedBy: String,
+  fulfilled: String,
   comments: [[String]]
 });
 

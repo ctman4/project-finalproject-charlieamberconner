@@ -58,6 +58,7 @@
         <div class="card-footer">
           <div class="row">
             <button id="claim">Claim this List</button>
+            <button id="fulfill">Fulfill</button>
             <script src="https://code.jquery.com/jquery-3.4.1.min.js"></script>
             <script>
               $('#claim').on('click', function(event) {
@@ -73,11 +74,23 @@
                   .done(() => window.location.reload())
                   .fail(error => alert('Could not comment'));
               })
+              $('#fulfill').on('click', function(event) {
+                event.preventDefault();
+                $.ajax({method: 'put', url: '/lists/<%= list._id -%>'})
+                  .done(() => window.location.reload())
+                  .fail(error => alert('Could not fulfill List'));
+              })
             </script>
             <%_ if (list.claimedBy) { -%>
               <p class="text-warning">Claimed By: <%= list.claimedBy -%></p>
             <%_ } else { -%>
               <p class="text-primary">List Not Claimed</p>
+            <%_ } -%>
+
+            <%_ if (list.fulfilled) { -%>
+              <p class="text-warning">Fulfilled: <%= list.fulfilled -%></p>
+            <%_ } else { -%>
+              <p class="text-primary">List Not fulfilled</p>
             <%_ } -%>
           </div>
         </div>
