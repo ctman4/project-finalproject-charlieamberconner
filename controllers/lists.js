@@ -25,7 +25,11 @@ module.exports.create = function(request, response, next) {
   console.log(typeof request.body);
   var myJSON = JSON.stringify(request.body);
   const li = myJSON.split(',');
+<<<<<<< HEAD
   List.create({items: li, customerID: request.session.user._id, title: request.session.user._id})
+=======
+  List.create({items: li, customerID: request.session.user._id, title: request.session.user._id's list'})
+>>>>>>> 0903d4aad3acb4734ea716acf62c783efebc07ce
     .then(list => response.status(201).send(list.id))
     .catch(error => next(error));
 };
