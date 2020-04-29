@@ -58,7 +58,19 @@
         <div class="card-footer">
           <div class="row">
             <button id="claim">Claim this List</button>
+            <%_ if (list.claimedBy) { -%>
+              <p class="text-warning">Claimed By: <%= list.claimedBy -%></p>
+            <%_ } else { -%>
+              <p class="text-primary">List Not Claimed</p>
+            <%_ } -%>
+
             <button id="fulfill">Fulfill</button>
+            <%_ if (list.fulfilled) { -%>
+              <p class="text-warning">Fulfilled: <%= list.fulfilled -%></p>
+            <%_ } else { -%>
+              <p class="text-primary">List Not fulfilled</p>
+            <%_ } -%>
+
             <script src="https://code.jquery.com/jquery-3.4.1.min.js"></script>
             <script>
               $('#claim').on('click', function(event) {
@@ -81,17 +93,6 @@
                   .fail(error => alert('Could not fulfill List'));
               })
             </script>
-            <%_ if (list.claimedBy) { -%>
-              <p class="text-warning">Claimed By: <%= list.claimedBy -%></p>
-            <%_ } else { -%>
-              <p class="text-primary">List Not Claimed</p>
-            <%_ } -%>
-
-            <%_ if (list.fulfilled) { -%>
-              <p class="text-warning">Fulfilled: <%= list.fulfilled -%></p>
-            <%_ } else { -%>
-              <p class="text-primary">List Not fulfilled</p>
-            <%_ } -%>
           </div>
         </div>
     </div>
