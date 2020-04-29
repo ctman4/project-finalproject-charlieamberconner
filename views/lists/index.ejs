@@ -91,17 +91,19 @@
                                       </div>
                                   </div>
                               </div>
-
                           </div>
                           <div class="card-body">
-                                  <div class="text-muted h7 mb-2"> <i class="fa fa-clock-o"></i>
-                                    <%= list.timePosted.getHours()%12 +":" + list.timePosted.getMinutes() -%>
-                                  </div>
+                              <div class="text-muted h7 mb-2"> <i class="fa fa-clock-o"></i>
+                                <%= list.timePosted.getMonth() -%>
+                                <%= list.timePosted.getDate() -%>
+                                <%= list.timePosted.getHours() -%>
+                                <%= list.timePosted.getMinutes() -%>
+                              </div>
                               <a class="card-link" href="/lists/<%= list.id -%>" >
                                   <h5 class="card-title"><%= list.title -%></h5>
                               </a>
                           <div class="card-footer">
-                              <%= if (list.claimedBy) { -%>
+                              <%_ if (list.claimedBy) { -%>
                                 <p class="text-warning">Claimed By: <%= list.claimedBy -%></p>
                               <%_ } else { -%>
                                 <p class="text-primary">List Not Claimed</p>
