@@ -25,3 +25,7 @@ body {
             content: none;
             display: none;
         }
+
+        ul {
+          list-style-type: square;
+        }
