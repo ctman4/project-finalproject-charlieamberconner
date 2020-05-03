@@ -26,6 +26,6 @@ body {
     display: none;
 }
 
-.a {
+ul.a {
   list-style-type: none;
 }
