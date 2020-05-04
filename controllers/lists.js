@@ -30,7 +30,7 @@ module.exports.create = function(request, response, next) {
     .catch(error => next(error));
 };
 
-// DELETE /courses/:id
+// DELETE /lists/:id
 module.exports.delete = function(request, response, next) {
   List.findByIdAndDelete(request.params.id)
     .then(list => list ? response.status(200).end() : next())
