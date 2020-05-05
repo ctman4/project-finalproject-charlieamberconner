@@ -94,12 +94,11 @@
                           </div>
                           <div class="card-body">
                               <div class="text-muted h7 mb-2"> <i class="fa fa-clock-o"></i>
-                                <%= var tp = new Date(list.timePosted) -%>
-                                <%= tp.getMonth() +"/"+ tp.getDate() +"/"+ tp.getFullYear() -%>
-                                <%_ if (tp.getHours() < 12) { -%>
-                                  <%= tp.getHours()%12 +":"+ tp.getMinutes() +"AM" -%>
+                                <%= list.timePosted.getMonth() +"/"+ list.timePosted.getDate() +"/"+ list.timePosted.getFullYear() -%>
+                                <%_ if (list.timePosted.getHours() < 12) { -%>
+                                  <%= list.timePosted.getHours()%12 +":"+ list.timePosted.getMinutes() +"AM" -%>
                                 <%_ } else { -%>
-                                  <%= tp.getHours()%12 +":"+ tp.getMinutes() +"PM" -%>
+                                  <%= list.timePosted.getHours()%12 +":"+ list.timePosted.getMinutes() +"PM" -%>
                                 <%_ } -%>
                               </div>
                               <a class="card-link" href="/lists/<%= list.id -%>" >
