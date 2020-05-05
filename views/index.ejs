@@ -24,7 +24,7 @@
             </main>
                 <script src="https://code.jquery.com/jquery-3.4.1.min.js"></script>
                 <script> // Log in
-                $('form').on('submit', function(event) {
+                $('div').on('submit', function(event) {
                   const form = $(this);
                   event.preventDefault();
                   $.ajax({method: 'post', url: '/login', data: form.serialize()})
