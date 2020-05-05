@@ -4,6 +4,12 @@
 
     <body>
             <main class="p-3">
+              <div class="jumbotron jumbotron-fluid">
+                <div class="container">
+                  <h1 class="display-4">Grocery Lists</h1>
+                  <p class="lead">Welcome to the Grocery Lists website! Login or sign up below.</p>
+                </div>
+              </div>
                 <form>
                   <input type="text" name="id">
                   <button type="submit">Login</button>
@@ -16,7 +22,7 @@
                   const form = $(this);
                   event.preventDefault();
                   $.ajax({method: 'post', url: '/login', data: form.serialize()})
-                  .done(() => window.location.replace('/lists'))
+                  .done(() => window.location.replace('/users'))
                   .fail(error => alert('Could not log in.'));
                 })
                 $('#create').on('click', function(event) {

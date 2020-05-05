@@ -22,10 +22,8 @@ module.exports.retrieve = function(request, response, next) {
 
 // POST /courses (with the new course in the request body)
 module.exports.create = function(request, response, next) {
-  console.log(typeof request.body);
-  var myJSON = JSON.stringify(request.body);
-  const li = myJSON.split(',');
-  List.create({items: li, customerID: request.session.user._id, title: 'View List'})
+  const li = request.body.items.split(',');
+  List.create({items: li, customerID: request.session.user._id, title: 'View List', timePosted: Date.now()})
     .then(list => response.status(201).send(list.id))
     .catch(error => next(error));
 };

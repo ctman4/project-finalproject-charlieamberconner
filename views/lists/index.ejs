@@ -21,18 +21,7 @@
     </div>
     <div class="container-fluid gedf-wrapper">
         <div class="row">
-            <div class="col-md-3">
-                <div class="card">
-                    <div class="card-body">
-                      <!--
-                      <p><%= user.name -%></p>
-                      <p><%= user._id -%></p>
-                    -->
-                      <a href="/logout">Logout</a>
-                    </div>
-                </div>
-            </div>
-            <div class="col-md-6 gedf-main">
+            <div class="mx-auto gedf-main" style="width: 800px;">
 
                 <!--- \\\\\\\Post-->
                 <div class="card gedf-card">
@@ -63,7 +52,24 @@
                                       </div>
                                     </form>
                                   -->
-                                  <%- include('edit.ejs'); -%>
+                                  <form id="create">
+
+                                    <label for="items">List Items:</label><br>
+                                    <input type="text" id="items" name="items"><br>
+
+                                    <button class="m-3">post</button>
+
+                                  </form>
+                                  <script src="https://code.jquery.com/jquery-3.4.1.min.js"></script>
+                                  <script>
+                                    $('#create').on('submit', function(event) {
+                                      const form = $(this);
+                                      event.preventDefault();
+                                      $.ajax({method: 'post', url: '/lists', data: form.serialize()})
+                                        .done(() => window.location.reload())
+                                        .fail(error => alert('Could not claim List'));
+                                    })
+                                  </script>
 
                                 </div>
                             </div>
