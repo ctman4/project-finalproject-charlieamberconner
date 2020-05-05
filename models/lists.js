@@ -14,11 +14,7 @@ const List = new mongoose.Schema({
   comments: [[String]]
 });
 
-// Convert incoming time posted strings to Date objects
-List.path('timePosted').set(function(timePosted) {
-  return new Date(`${timePosted}`);
-});
-
+/*
 // Provide a 12-hour time string as a virtual property
 List.virtual('time12').get(function() {
   return this.time.toLocaleTimeString('en-US', {hour: 'numeric', minute: 'numeric'});
@@ -28,6 +24,7 @@ List.virtual('time12').get(function() {
 List.virtual('time24').get(function() {
   return this.time.toLocaleTimeString('en-US', {hour12: false});
 });
+*/
 
 //Export the module
 module.exports = mongoose.model('List', List);
