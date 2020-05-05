@@ -7,7 +7,6 @@ const List = new mongoose.Schema({
   title: String,
   customerID: String,
   items: [String],
-  budget: String,
   timePosted: Date,
   claimedBy: String,
   fulfilled: String,
