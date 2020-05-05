@@ -92,7 +92,7 @@
               })
               $('#fulfill').on('click', function(event) {
                 event.preventDefault();
-                $.ajax({method: 'put', url: '/lists/<%= list._id -%>'})
+                $.ajax({method: 'delete', url: '/lists/<%= list._id -%>'})
                   .done(() => window.location.reload())
                   .fail(error => alert('Could not fulfill List'));
               })
