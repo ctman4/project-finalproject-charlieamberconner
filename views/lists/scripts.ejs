@@ -36,7 +36,7 @@
     event.preventDefault();
     console.log(form);
     $.ajax({method: 'post', url: '/lists', data: form.serialize()})
-      .done(() => window.location.reload())
+      //.done(() => window.location.reload())
       .fail(error => alert(error.responseText));
     })
 
