@@ -3,24 +3,12 @@
   <%- include('./head'); -%>
 
     <body>
-            <div class="jumbotron jumbotron-fluid">
-              <div class="container">
-                <h1 class="display-4">Grocery Lists</h1>
-                <p class="lead"> Welcome to the Grocery Lists website! Log in or sign up below.</p>
-              </div>
-            </div>
-            <main class="mx-auto" style="width: 500px;">
-              <div class="form-group">
+            <main class="p-3">
                 <form>
-                    <div class="input-group mb-3">
-                      <div class="input-group-prepend mb-3">
-                        <button class="btn btn-outline-secondary" type="submit" id="button-addon1">Login</button>
-                      </div>
-                      <input name="id "type="text" class="form-control" placeholder="" aria-label="Example text with button addon" aria-describedby="button-addon1">
-                    </div>
-                  <button type="button" id="create" class="m-3 btn btn-secondary">Create an account</button>
+                  <input type="text" name="id">
+                  <button type="submit">Login</button>
+                  <button type="button" id="create">Create an account</button>
                 </form>
-              </div>
             </main>
                 <script src="https://code.jquery.com/jquery-3.4.1.min.js"></script>
                 <script> // Log in
