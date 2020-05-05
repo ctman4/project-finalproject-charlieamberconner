@@ -34,7 +34,7 @@
   $(document).on('click', '.create', function(event) {
     const form = $(this).closest('form');
     event.preventDefault();
-
+    console.log(form);
     $.ajax({method: 'post', url: '/lists', data: form.serialize()})
       .done(() => window.location.reload())
       .fail(error => alert(error.responseText));
