@@ -11,37 +11,27 @@ module.exports.index = function(request, response, next) {
 
 
 module.exports.unclaimed = function(request, response, next) {
-  const order = request.query.sort || 'timePosted'; // Default to sort by timePosted
-
-  List.find(function() {
-    if (request.body.claimedBy === undefined) {
-        return request.body;
-    }
-  }).sort()
-    .then(lists => response.render('lists/unclaimed', {lists: lists, order: order}))
+  List.find({ claimedBy: undefined})
+  .sort()
+    .then(lists => response.render('lists/mylists', {lists: lists}))
     .catch(error => next(error));
 };
 
 
 module.exports.myclaimed = function(request, response, next) {
-  const order = request.query.sort || 'timePosted'; // Default to sort by timePosted
-
-  List.find(function() {
-    if (request.body.claimedBy === request.params.id) {
-        return request.body;
-    }
-  }).sort()
-    .then(lists => response.render('lists/myclaimed', {lists: lists, order: order}))
+  const myID = request.session.user._id;
+  List.find({ claimedBy: myID})
+  .sort()
+    .then(lists => response.render('lists/mylists', {lists: lists}))
     .catch(error => next(error));
 };
 
 
 module.exports.mylists = function(request, response, next) {
   const myID = request.session.user._id;
-  console.log(myID);
   List.find({ customerID: myID})
   .sort()
-    .then(lists => response.render('lists/mylists', {lists: lists, order: order}))
+    .then(lists => response.render('lists/mylists', {lists: lists}))
     .catch(error => next(error));
 };
 
