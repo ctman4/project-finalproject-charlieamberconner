@@ -5,6 +5,16 @@ const lists = require('./controllers/lists');
 const router = express.Router();
 
 
+// Check for admin status
+const authorize = function(request, response, next) {
+  if (request.session.user) {
+    next(); // Fulfill the request
+  } else {
+    response.status(401).end();
+  }
+};
+
+
 // Handle home-page requests
 router.get('/', function(request, response) {
   response.render('index');
@@ -28,24 +38,24 @@ router.get('/logout', function(request, response) {
 });
 
 // handle user requests
-router.get('/users', users.index);
+router.get('/users', authorize, users.index);
 
-router.get('/users/:id', users.retrieve);
+router.get('/users/:id', authorize, users.retrieve);
 
 // Handle list requests
-router.get('/lists', lists.index);
-router.get('/lists/unclaimed', lists.unclaimed);
-router.get('/lists/myclaimed', lists.myclaimed);
-router.get('/lists/mylists', lists.mylists);
+router.get('/lists', authorize, lists.index);
+router.get('/lists/unclaimed', authorize, lists.unclaimed);
+router.get('/lists/myclaimed', authorize, lists.myclaimed);
+router.get('/lists/mylists', authorize, lists.mylists);
 
 // Handle getting lists by id, my claimed lists, and my lists
-router.get('/lists/:id', lists.retrieve);
+router.get('/lists/:id', authorize, lists.retrieve);
 
 
-router.put('/lists/:id', lists.claim);
+router.put('/lists/:id', authorize, lists.claim);
 
-router.post('/lists', lists.create);
-router.delete('/lists/:id', lists.delete);
+router.post('/lists', authorize, lists.create);
+router.delete('/lists/:id', authorize, lists.delete);
 
 
 module.exports = router;
