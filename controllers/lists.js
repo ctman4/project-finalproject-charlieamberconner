@@ -13,7 +13,7 @@ module.exports.index = function(request, response, next) {
 module.exports.unclaimed = function(request, response, next) {
   const order = request.query.sort || 'timePosted'; // Default to sort by timePosted
 
-  List.find(lists.request.claimedBy === undefined).sort()
+  List.find(request.claimedBy === undefined).sort()
     .then(lists => response.render('lists/index', {lists: lists, order: order}))
     .catch(error => next(error));
 };
@@ -22,7 +22,7 @@ module.exports.unclaimed = function(request, response, next) {
 module.exports.myclaimed = function(request, response, next) {
   const order = request.query.sort || 'timePosted'; // Default to sort by timePosted
 
-  List.find(lists.request.claimedBy === request.params.id).sort()
+  List.find(request.claimedBy === request.params.id).sort()
     .then(lists => response.render('lists/index', {lists: lists, order: order}))
     .catch(error => next(error));
 };
@@ -31,7 +31,7 @@ module.exports.myclaimed = function(request, response, next) {
 module.exports.mylists = function(request, response, next) {
   const order = request.query.sort || 'timePosted'; // Default to sort by timePosted
 
-  List.find(lists.request.customerID === request.params.id).sort()
+  List.find(request.customerID === request.params.id).sort()
     .then(lists => response.render('lists/index', {lists: lists, order: order}))
     .catch(error => next(error));
 };
