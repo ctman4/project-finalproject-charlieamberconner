@@ -91,7 +91,11 @@
                                       $('#history').append(p);
                                       $('#history').append(list);
                                     });
+<<<<<<< HEAD
                                     $('.create').on('sumbit', function(event) {
+=======
+                                    $('#create').on('sumbit', function(event) {
+>>>>>>> 45b9ff506fef3951e18388f76782d4d97b8191dd
                                       const form = $(this);
                                       event.preventDefault();
                                       $.ajax({method: 'post', url: '/lists', data: form.serialize()})
