@@ -35,22 +35,10 @@ module.exports.myclaimed = function(request, response, next) {
     .catch(error => next(error));
 };
 
-/*
-module.exports.mylists = function(request, response, next) {
-  const order = request.query.sort || 'timePosted'; // Default to sort by timePosted
-
-  List.find(function() {
-    if (request.body.customerID === request.params.id) {
-      return request.body;
-    }
-  }).sort()
-    .then(lists => response.render('lists/mylists', {lists: lists, order: order}))
-    .catch(error => next(error));
-};
-*/
 
 module.exports.mylists = function(request, response, next) {
-  myID = session.user._id;
+  myID = request.session.user._id;
+  console.log(myID);
   List.find({ customerID: myID})
   .sort()
     .then(lists => response.render('lists/mylists', {lists: lists, order: order}))
