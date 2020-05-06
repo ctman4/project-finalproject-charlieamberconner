@@ -13,7 +13,7 @@ module.exports.index = function(request, response, next) {
 module.exports.unclaimed = function(request, response, next) {
   List.find({ claimedBy: undefined})
   .sort()
-    .then(lists => response.render('lists/mylists', {lists: lists}))
+    .then(lists => response.render('lists/unclaimed', {lists: lists}))
     .catch(error => next(error));
 };
 
@@ -22,7 +22,7 @@ module.exports.myclaimed = function(request, response, next) {
   const myID = request.session.user._id;
   List.find({ claimedBy: myID})
   .sort()
-    .then(lists => response.render('lists/mylists', {lists: lists}))
+    .then(lists => response.render('lists/myclaimed', {lists: lists}))
     .catch(error => next(error));
 };
 
