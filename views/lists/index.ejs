@@ -54,10 +54,10 @@
                                     <label for="items">Add item:</label><br>
                                     <input type="text" id="items" name="items"><br>
                                     <button type="submit">Add Item</button>
-                                    <button type="delete">Delete</button>
+                                    <button type="delete">Delete Item</button>
 
 
-                                    <div id="itemBullets"></div>
+                                    <div id="itemBullets" name ="items"></div>
 
                                     <button class="m-3">finish</button>
 
@@ -66,7 +66,7 @@
 
                                   <script src="https://code.jquery.com/jquery-3.4.1.min.js"></script>
                                   <script>
-                                    $('#create').on('submit', function(event) {
+                                    $('#itemBullets').on('submit', function(event) {
                                       const form = $(this);
                                       event.preventDefault();
                                       $.ajax({method: 'post', url: '/lists', data: form.serialize()})
@@ -79,7 +79,7 @@
                                     let counter = 0;
 
                                     // Respond to submit events
-                                    $('form').on('submit', function(event) {
+                                    $('#items').on('submit', function(event) {
                                       const form = $(this); // JQuery object representing the form
                                       event.preventDefault(); // Don't really submit the form
 
