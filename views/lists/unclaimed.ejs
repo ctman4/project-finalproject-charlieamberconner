@@ -73,7 +73,7 @@
                 <!--- \\\\\\\Post-->
                 <table class="table">
                   <%_ for (const list of lists) { -%>
-                    <%_ if (list.claimedBy) { -%>
+                    <%_ if (list.claimedBy === undefined) { -%>
                     <tr class="mt-3">
                       <div class="card gedf-card mt-3">
                           <div class="card-header">
