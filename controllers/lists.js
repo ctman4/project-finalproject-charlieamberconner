@@ -1,5 +1,43 @@
 const List = require('../models/lists');
 
+<<<<<<< HEAD
+=======
+// GET /sections?sort=
+module.exports.index = function(request, response, next) {
+  const order = request.query.sort || 'timePosted'; // Default to sort by timePosted
+
+  List.find().sort()
+    .then(lists => response.render('lists/index', {lists: lists, order: order}))
+    .catch(error => next(error));
+};
+>>>>>>> 2a2a17ecb4d0a2f99e0dc2fb07cc3cbbcfc830af
+
+
+module.exports.unclaimed = function(request, response, next) {
+  List.find({ claimedBy: undefined})
+  .sort()
+    .then(lists => response.render('lists/unclaimed', {lists: lists}))
+    .catch(error => next(error));
+};
+
+
+module.exports.myclaimed = function(request, response, next) {
+  const myID = request.session.user._id;
+  List.find({ claimedBy: myID})
+  .sort()
+    .then(lists => response.render('lists/myclaimed', {lists: lists}))
+    .catch(error => next(error));
+};
+
+
+module.exports.mylists = function(request, response, next) {
+  const myID = request.session.user._id;
+  List.find({ customerID: myID})
+  .sort()
+    .then(lists => response.render('lists/mylists', {lists: lists}))
+    .catch(error => next(error));
+};
+
 
 // GET /lists/:id
 module.exports.retrieve = function(request, response, next) {
@@ -11,6 +49,8 @@ module.exports.retrieve = function(request, response, next) {
     }
   }).catch(error => next(error));
 };
+
+// GET /lists/
 
 // POST /courses (with the new course in the request body)
 module.exports.create = function(request, response, next) {

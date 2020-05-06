@@ -23,7 +23,7 @@ const List = new mongoose.Schema({
 const lists = [
   new List({
     title: 'My List',
-    customerID: 'charlestirrell99',
+    customerID: 'charlietirrell99',
     customerName: 'Charles Tirrell',
     location: 'Marion, MA',
     items: ['Bananas','Carrots','Beef','Orange Juice','Doritos'],
