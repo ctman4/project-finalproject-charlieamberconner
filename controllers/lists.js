@@ -1,16 +1,5 @@
 const List = require('../models/lists');
 
-<<<<<<< HEAD
-=======
-// GET /sections?sort=
-module.exports.index = function(request, response, next) {
-  const order = request.query.sort || 'timePosted'; // Default to sort by timePosted
-
-  List.find().sort()
-    .then(lists => response.render('lists/index', {lists: lists, order: order}))
-    .catch(error => next(error));
-};
->>>>>>> 2a2a17ecb4d0a2f99e0dc2fb07cc3cbbcfc830af
 
 
 module.exports.unclaimed = function(request, response, next) {
