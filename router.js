@@ -51,7 +51,6 @@ router.get('/lists', lists.index);
 
 router.get('/lists/:id', lists.retrieve);
 
-router.get('/lists/claimedBy', lists.retrieve);
 
 router.put('/lists/:id', lists.claim);
 
