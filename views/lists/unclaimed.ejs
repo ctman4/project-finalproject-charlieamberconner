@@ -17,7 +17,7 @@
 
   <body>
     <div class="pb-5">
-      <%- include('../navbar', {active: 'lists'}); -%>
+      <%- include('../navbar', {active: 'lists/unclaimed'}); -%>
     </div>
     <div class="container-fluid gedf-wrapper">
         <div class="row">
@@ -49,16 +49,6 @@
                                       </div>
                                     </form>
                                   -->
-                                  <form id="create">
-
-                                    <label for="items">Add item:</label><br>
-                                    <input type="text" id="items" name="items"><br>
-
-                                    <button id="add" class="m-3">add</button>
-                                    <button id="finish" class="m-3">finish</button>
-
-
-                                  </form>
                                   <div id="history"></div>
                                   <script src="https://code.jquery.com/jquery-3.4.1.min.js"></script>
 
