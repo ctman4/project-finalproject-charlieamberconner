@@ -55,18 +55,19 @@
                                     <input type="text" id="items" name="items"><br>
                                     <button type="submit">Add Item</button>
                                     <button type="delete">Delete Item</button>
+                                    <button type="finish" class="m-3">finish</button>
 
 
                                     <div id="itemBullets" name ="items"></div>
 
-                                    <button class="m-3">finish</button>
+
 
                                   </form>
 
 
                                   <script src="https://code.jquery.com/jquery-3.4.1.min.js"></script>
                                   <script>
-                                    $('#itemBullets').on('submit', function(event) {
+                                    $('#itemBullets').on('finish', function(event) {
                                       const form = $(this);
                                       event.preventDefault();
                                       $.ajax({method: 'post', url: '/lists', data: form.serialize()})
