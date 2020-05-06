@@ -4,20 +4,6 @@ const lists = require('./controllers/lists');
 
 const router = express.Router();
 
-/*
-// Handle user requests
-router.get('/users', function(request, response) {
-  response.render('/users/index', {users: users});
-});
-// Handle login requests
-router.post('/login', users.login);
-// Handle logout requests
-router.get('/logout', function(request, response) {
-  request.session.user = undefined;
-  response.redirect('/');
-});
-*/
-
 
 // Handle home-page requests
 router.get('/', function(request, response) {

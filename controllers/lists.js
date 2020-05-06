@@ -5,9 +5,28 @@ module.exports.index = function(request, response, next) {
   const order = request.query.sort || 'timePosted'; // Default to sort by timePosted
 
   List.find().sort()
-    .then(lists => response.render('lists/index', {lists: lists}))
+    .then(lists => response.render('lists/index', {lists: lists, order: order}))
     .catch(error => next(error));
 };
+
+
+module.exports.unclaimed = function(request, response, next) {
+  const order = request.query.sort || 'timePosted'; // Default to sort by timePosted
+
+  List.find(lists.request.claimedBy === undefined).sort()
+    .then(lists => response.render('lists/index', {lists: lists, order: order}))
+    .catch(error => next(error));
+};
+
+/*
+module.exports.myclaimed = function(request, response, next) {
+ //pass
+};
+
+module.exports.mylists = function(request, response, next) {
+  //pass
+};
+*/
 
 // GET /lists/:id
 module.exports.retrieve = function(request, response, next) {
@@ -19,6 +38,8 @@ module.exports.retrieve = function(request, response, next) {
     }
   }).catch(error => next(error));
 };
+
+// GET /lists/
 
 // POST /courses (with the new course in the request body)
 module.exports.create = function(request, response, next) {
