@@ -14,7 +14,7 @@ module.exports.unclaimed = function(request, response, next) {
   const order = request.query.sort || 'timePosted'; // Default to sort by timePosted
 
   List.find(function() {
-    return request.body.claimedBy === undefined
+    return request.body.claimedBy === undefined;
   }).sort()
     .then(lists => response.render('lists/index', {lists: lists, order: order}))
     .catch(error => next(error));
@@ -25,7 +25,7 @@ module.exports.myclaimed = function(request, response, next) {
   const order = request.query.sort || 'timePosted'; // Default to sort by timePosted
 
   List.find(function() {
-    return request.body.claimedBy === request.params.id
+    return request.body.claimedBy === request.params.id;
   }).sort()
     .then(lists => response.render('lists/index', {lists: lists, order: order}))
     .catch(error => next(error));
@@ -36,7 +36,7 @@ module.exports.mylists = function(request, response, next) {
   const order = request.query.sort || 'timePosted'; // Default to sort by timePosted
 
   List.find(function() {
-    return request.body.customerID === request.params.id
+    return request.body.customerID === request.params.id;
   }).sort()
     .then(lists => response.render('lists/index', {lists: lists, order: order}))
     .catch(error => next(error));
