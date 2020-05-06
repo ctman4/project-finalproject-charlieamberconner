@@ -62,24 +62,33 @@
                                   <div id="history"></div>
                                   <script src="https://code.jquery.com/jquery-3.4.1.min.js"></script>
                                   <script>
-                                    $('#create').ready(function(){
-                                      $("#add").click(function(){
-                                        const inputs = form.find('input');
-                                        for (let input of inputs) {
-                                          input = $(input);
-                                          const li = $(`<li><div>
+                                    let counter = 0;
 
-                                            ${input.val()}
+                                    // Respond to submit events
+                                    $('#create').on('#add', function(event) {
+                                      const form = $(this); // JQuery object representing the form
+                                      event.preventDefault(); // Don't really submit the form
 
-                                            </div></li>`); // New list item
-                                          list.append(li);
-                                        $("ul").append(" <li>${input.val()}</li>.");
+                                      // Create a new list
+                                      const list = $('<ul></ul>');
+
+                                      // Translate each input value into a list item
+                                      const inputs = form.find('input'); // JQuery object represent all inputs
+                                      for (let input of inputs) {
+                                        input = $(input); // Turn into a JQuery object
+                                        const li = $(`<li>${input.val()}</li>`); // New list item
+                                        list.append(li);
+                                        input.val(''); // Empty out the box
                                       }
-                                      $('#history').append(list);
-                                      });
 
+                                      counter++;
+                                      const p = $(`<p>Submit #${counter}</p>`);
+
+                                      // Add to the page
+                                      $('#history').append(p);
+                                      $('#history').append(list);
                                     });
-                                    $('#create').on('submit', function(event) {
+                                    $('#create').on('#finish', function(event) {
                                       const form = $(this);
                                       event.preventDefault();
                                       $.ajax({method: 'post', url: '/lists', data: form.serialize()})
