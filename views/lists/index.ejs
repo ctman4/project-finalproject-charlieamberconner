@@ -49,14 +49,17 @@
                                       </div>
                                     </form>
                                   -->
-                                  <form id="create">
+                                  <form>
 
                                     <label for="items">Add item:</label><br>
                                     <input type="text" id="items" name="items"><br>
+                                    <div id = "add">
+                                      <button class="m-3">add</button>
+                                    </div>
 
-                                    <button id="add" class="m-3">add</button>
-                                    <button id="finish" class="m-3">finish</button>
-
+                                    <div id="create">
+                                      <button id="finish" class="m-3">finish</button>
+                                    </div>
 
                                   </form>
                                   <div id="history"></div>
@@ -65,7 +68,7 @@
                                     let counter = 0;
 
                                     // Respond to submit events
-                                    $('#create').on('#add', function(event) {
+                                    $('.add').on('submit', function(event) {
                                       const form = $(this); // JQuery object representing the form
                                       event.preventDefault(); // Don't really submit the form
 
@@ -88,7 +91,7 @@
                                       $('#history').append(p);
                                       $('#history').append(list);
                                     });
-                                    $('#create').on('#finish', function(event) {
+                                    $('.create').on('sumbit', function(event) {
                                       const form = $(this);
                                       event.preventDefault();
                                       $.ajax({method: 'post', url: '/lists', data: form.serialize()})
