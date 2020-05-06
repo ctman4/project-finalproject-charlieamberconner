@@ -37,10 +37,7 @@ app.use(function(request, response, next) {
   next();
 });
 
-// Redirect from the home page
-app.get('/', function(request, response) {
-  response.render('index');
-});
+
 
 // Make user data available in all views
 app.use(function(request, response, next) {
