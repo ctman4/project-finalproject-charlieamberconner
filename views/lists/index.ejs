@@ -52,70 +52,41 @@
                                   <form id="create">
 
                                     <label for="items">Add item:</label><br>
-                                    <input type="text" id="items" name="item"><br>
-                                    <button type="submit">Add Item</button>
-                                    <button type="delete">Delete Item</button>
-                                    <button type="finish" class="m-3">finish</button>
+                                    <input type="text" id="items" name="items"><br>
 
-
-                                    <div id="itemBullets" name ="items"></div>
-
+                                    <button id="add" class="m-3">add</button>
+                                    <button id="finish" class="m-3">finish</button>
 
 
                                   </form>
-
-
+                                  <div id="history"></div>
                                   <script src="https://code.jquery.com/jquery-3.4.1.min.js"></script>
                                   <script>
-                                    $('#itemBullets').on('finish', function(event) {
+                                    $('#create').ready(function(){
+                                      $("#add").click(function(){
+                                        const inputs = form.find('input');
+                                        for (let input of inputs) {
+                                          input = $(input);
+                                          const li = $(`<li><div>
+
+                                            ${input.val()}
+
+                                            </div></li>`); // New list item
+                                          list.append(li);
+                                        $("ul").append(" <li>${input.val()}</li>.");
+                                      }
+                                      $('#history').append(list);
+                                      });
+
+                                    });
+                                    $('#create').on('submit', function(event) {
                                       const form = $(this);
                                       event.preventDefault();
                                       $.ajax({method: 'post', url: '/lists', data: form.serialize()})
                                         .done(() => window.location.reload())
                                         .fail(error => alert('Could not claim List'));
                                     })
-
-
-                                    // Number of times the form has been submitted
-                                    let counter = 0;
-
-                                    // Respond to submit events
-                                    $('#item').on('submit', function(event) {
-                                      const form = $(this); // JQuery object representing the form
-                                      event.preventDefault(); // Don't really submit the form
-
-                                      // Create a new list
-                                      const list = $('<ul></ul>');
-
-                                      // Translate each input value into a list item
-                                      const inputs = form.find('input'); // JQuery object represent all inputs
-                                      for (let input of inputs) {
-                                        input = $(input); // Turn into a JQuery object
-                                        const li = $(`<li><div>
-
-                                          ${input.val()}
-
-                                          </div></li>`); // New list item
-                                        list.append(li);
-                                        input.val(''); // Empty out the box
-                                      }
-                                      //creates submit #
-                                      //counter++;
-                                      //const p = $(`<p>Submit #${counter}</p>`);
-
-                                      // Add to the page
-                                      //$('#history').append(p);
-                                      $('#itemBullets').append(list);
-                                    });
-
-                                    $('form').on('submit','Delete', function(event){
-                                      const form = $(this);
-                                      event.preventDefault();
-                                      list.remove();
-                                    });
-
-
-                                </script>
+                                  </script>
 
                                 </div>
                             </div>
