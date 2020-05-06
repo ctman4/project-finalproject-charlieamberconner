@@ -52,7 +52,7 @@
                                   <form id="create">
 
                                     <label for="items">Add item:</label><br>
-                                    <input type="text" id="items" name="items"><br>
+                                    <input type="text" id="items" name="item"><br>
                                     <button type="submit">Add Item</button>
                                     <button type="delete">Delete Item</button>
                                     <button type="finish" class="m-3">finish</button>
@@ -80,7 +80,7 @@
                                     let counter = 0;
 
                                     // Respond to submit events
-                                    $('#items').on('submit', function(event) {
+                                    $('#item').on('submit', function(event) {
                                       const form = $(this); // JQuery object representing the form
                                       event.preventDefault(); // Don't really submit the form
 
