@@ -35,6 +35,7 @@ router.get('/users/:id', users.retrieve);
 // Handle list requests
 router.get('/lists', lists.index);
 
+// Handle getting lists by id, my claimed lists, and my lists
 router.get('/lists/:id', lists.retrieve);
 
 

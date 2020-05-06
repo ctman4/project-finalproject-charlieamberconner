@@ -18,15 +18,24 @@ module.exports.unclaimed = function(request, response, next) {
     .catch(error => next(error));
 };
 
-/*
+
 module.exports.myclaimed = function(request, response, next) {
- //pass
+  const order = request.query.sort || 'timePosted'; // Default to sort by timePosted
+
+  List.find(lists.request.claimedBy === request.params.id).sort()
+    .then(lists => response.render('lists/index', {lists: lists, order: order}))
+    .catch(error => next(error));
 };
 
+
 module.exports.mylists = function(request, response, next) {
-  //pass
+  const order = request.query.sort || 'timePosted'; // Default to sort by timePosted
+
+  List.find(lists.request.id === request.params.id).sort()
+    .then(lists => response.render('lists/index', {lists: lists, order: order}))
+    .catch(error => next(error));
 };
-*/
+
 
 // GET /lists/:id
 module.exports.retrieve = function(request, response, next) {
