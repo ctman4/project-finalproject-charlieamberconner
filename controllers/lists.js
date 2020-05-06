@@ -37,7 +37,7 @@ module.exports.myclaimed = function(request, response, next) {
 
 
 module.exports.mylists = function(request, response, next) {
-  myID = request.session.user._id;
+  const myID = request.session.user._id;
   console.log(myID);
   List.find({ customerID: myID})
   .sort()
