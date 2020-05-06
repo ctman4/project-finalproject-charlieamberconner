@@ -51,12 +51,20 @@
                                   -->
                                   <form id="create">
 
-                                    <label for="items">List Items:</label><br>
+                                    <label for="items">Add item:</label><br>
                                     <input type="text" id="items" name="items"><br>
+                                    <input type="text" name="left">
+                                    <button type="submit">Add Item</button>
+                                    <button type="delete">Delete</button>
 
-                                    <button class="m-3">post</button>
+
+                                    <div id="itemBullets"></div>
+
+                                    <button class="m-3">finish</button>
 
                                   </form>
+
+
                                   <script src="https://code.jquery.com/jquery-3.4.1.min.js"></script>
                                   <script>
                                     $('#create').on('submit', function(event) {
@@ -66,7 +74,48 @@
                                         .done(() => window.location.reload())
                                         .fail(error => alert('Could not claim List'));
                                     })
-                                  </script>
+
+
+                                    // Number of times the form has been submitted
+                                    let counter = 0;
+
+                                    // Respond to submit events
+                                    $('form').on('submit', function(event) {
+                                      const form = $(this); // JQuery object representing the form
+                                      event.preventDefault(); // Don't really submit the form
+
+                                      // Create a new list
+                                      const list = $('<ul></ul>');
+
+                                      // Translate each input value into a list item
+                                      const inputs = form.find('input'); // JQuery object represent all inputs
+                                      for (let input of inputs) {
+                                        input = $(input); // Turn into a JQuery object
+                                        const li = $(`<li><div>
+
+                                          ${input.val()}
+
+                                          </div></li>`); // New list item
+                                        list.append(li);
+                                        input.val(''); // Empty out the box
+                                      }
+                                      //creates submit #
+                                      //counter++;
+                                      //const p = $(`<p>Submit #${counter}</p>`);
+
+                                      // Add to the page
+                                      //$('#history').append(p);
+                                      $('#itemBullets').append(list);
+                                    });
+
+                                    $('form').on('submit','Delete', function(event){
+                                      const form = $(this);
+                                      event.preventDefault();
+                                      list.remove();
+                                    });
+
+
+                                </script>
 
                                 </div>
                             </div>
