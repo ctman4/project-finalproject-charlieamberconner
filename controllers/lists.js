@@ -16,7 +16,7 @@ module.exports.unclaimed = function(request, response, next) {
   List.find(function() {
     return request.body.claimedBy === undefined;
   }).sort()
-    .then(lists => response.render('lists/index', {lists: lists, order: order}))
+    .then(lists => response.render('lists/unclaimed', {lists: lists, order: order}))
     .catch(error => next(error));
 };
 
@@ -27,7 +27,7 @@ module.exports.myclaimed = function(request, response, next) {
   List.find(function() {
     return request.body.claimedBy === request.params.id;
   }).sort()
-    .then(lists => response.render('lists/index', {lists: lists, order: order}))
+    .then(lists => response.render('lists/myclaimed', {lists: lists, order: order}))
     .catch(error => next(error));
 };
 
@@ -38,7 +38,7 @@ module.exports.mylists = function(request, response, next) {
   List.find(function() {
     return request.body.customerID === request.params.id;
   }).sort()
-    .then(lists => response.render('lists/index', {lists: lists, order: order}))
+    .then(lists => response.render('lists/mylists', {lists: lists, order: order}))
     .catch(error => next(error));
 };
 
