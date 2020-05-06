@@ -13,7 +13,9 @@ module.exports.index = function(request, response, next) {
 module.exports.unclaimed = function(request, response, next) {
   const order = request.query.sort || 'timePosted'; // Default to sort by timePosted
 
-  List.find(request.claimedBy === undefined).sort()
+  List.find(function(request) { 
+    return request.claimedBy === undefined
+  }).sort()
     .then(lists => response.render('lists/index', {lists: lists, order: order}))
     .catch(error => next(error));
 };
