@@ -43,7 +43,7 @@
 
               </ul>
             </p>
-          <%- include('/comments'); -%>
+          <%- include('./comments'); -%>
 
         </div>
         <div class="card-footer">
@@ -70,13 +70,6 @@
                 $.ajax({method: 'put', url: '/lists/<%= list._id -%>'})
                   .done(() => window.location.reload())
                   .fail(error => alert('Could not claim List'));
-              })
-              $('form').on('submit', function(event) {
-                const form = $(this);
-                event.preventDefault();
-                $.ajax({method: 'put', url: '/lists/<%= list._id -%>', data: form.serialize()})
-                  .done(() => window.location.reload())
-                  .fail(error => alert('Could not comment'));
               })
               $('#fulfill').on('click', function(event) {
                 event.preventDefault();
