@@ -19,14 +19,22 @@
                       </div>
                     </div>
                   -->
+                  <div class="input-group mb-3">
+                    <input type="text" name="id" class="form-control" placeholder="username" aria-label="username" aria-describedby="login">
+                    <div class="input-group-append">
+                      <button type="submit" class="btn btn-primary" id="login">Login</button>
+                    </div>
+                  </div>
+                  <!--
                   <input placeholder="username" class="mb-5" type="text" name="id">
                   <button type="submit" class="btn btn-primary">Login</button>
+                -->
                   <button type="button" id="create" class="btn btn-secondary">Create an account</button>
                 </form>
             </main>
                 <script src="https://code.jquery.com/jquery-3.4.1.min.js"></script>
                 <script> // Log in
-                $('form').on('submit', function(event) {
+                $('.input-group-append').on('submit', function(event) {
                   const form = $(this);
                   event.preventDefault();
                   $.ajax({method: 'post', url: '/login', data: form.serialize()})
