@@ -132,7 +132,7 @@
 
 
 
-                                      ('.createButton').on('submit', function(event) {
+                                      $('.createButton').on('submit', function(event) {
                                         const form = $(this);
                                         event.preventDefault();
                                         $.ajax({method: 'post', url: '/lists', data: form.serialize()})
