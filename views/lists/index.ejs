@@ -102,7 +102,7 @@
                                     <div id="history1"></div>
                                     <script>
                                     let counter = 0;
-                                    var ans = [];
+                                    var items = [];
                                       $('.addItem').on('submit', function(event) {
                                         const form = $(this); // JQuery object representing the form
                                         event.preventDefault(); // Don't really submit the form
@@ -115,10 +115,10 @@
                                         const inputs = form.find('input'); // JQuery object represent all inputs
                                         for (let input of inputs) {
                                           input = $(input); // Turn into a JQuery object
-                                          const li = $(`<div id=answers><button id=${counter} class="btn btn-outline-primary btn-sm">${input.val()}</button></div>`); // New list item
+                                          const li = $(`<div id=answers>${input.val()}</div>`); // New list item
                                           list.append(li);
-                                          ans.push(input.val());
-                            
+                                          items.push(input.val());
+
                                           input.val(''); // Empty out the box
                                         }
 
