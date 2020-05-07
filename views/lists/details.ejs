@@ -74,7 +74,7 @@
                 <%_ } -%>
               </li>
               <li>
-                <%_ if (user) { -%>
+                <%_ if (user._id == list.customerID) { -%>
                   <button id="fulfill" class="btn btn-success">Fulfill</button>
                 <%_ } -%>
               </li>
