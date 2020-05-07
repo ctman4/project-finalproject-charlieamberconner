@@ -36,10 +36,10 @@
                 <script> // Log in
                 $('.input-group-append').on('submit', function(event) {
                   const form = $(this);
-                  console.log(form);
+                  console.log("form: ", form);
                   event.preventDefault();
                   $.ajax({method: 'post', url: '/login', data: form.serialize()})
-                  .done(() => window.location.replace('/users'))
+                  //.done(() => window.location.replace('/users'))
                   .fail(error => alert('Could not log in.'));
                 })
                 $('#create').on('click', function(event) {
