@@ -69,12 +69,12 @@
                 <%_ if (list.claimedBy) { -%>
                   <p class="text-warning">Claimed By: <%= list.claimedBy -%></p>
                 <%_ } else { -%>
-                  <button id="claim">Claim this List</button>
+                  <button id="claim" class="btn btn-primary">Claim this List</button>
                   <p class="text-primary">List Not Claimed</p>
-                <%_ } -%>`
+                <%_ } -%>
               </li>
               <li>
-                <button id="fulfill">Fulfill</button>
+                <button id="fulfill" class="btn btn-success">Fulfill</button>
                 <%_ if (list.fulfilled) { -%>
                   <p class="text-warning">Fulfilled: <%= list.fulfilled -%></p>
                 <%_ } else { -%>
