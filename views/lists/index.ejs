@@ -39,62 +39,6 @@
                                 <div class="form-group">
                                     <label class="sr-only" for="message">post</label>
 
-                                    <!--
-                                    <form id ="create" class="form-inline">
-                                      <textarea class="form-control" id="message" name="items" rows="3" placeholder="Enter list items"></textarea>
-                                      <div class="btn-toolbar justify-content-between">
-                                          <div class="btn-group">
-                                              <button type="submit" class="btn btn-primary" id="insert">share</button>
-                                          </div>
-                                      </div>
-                                    </form>
-                                  -->
-
-                                  <!--
-                                  <form id = "create">
-
-                                    <label for="items">Add item:</label><br>
-                                    <label for="items">Add item:</label><br>
-                                    <label for="items">Add item:</label><br>
-                                    <label for="items">Add item:</label><br>
-                                    <input type="text" id="items" name="items"><br>
-                                    <button id ="add" class="m-3">add</button>
-                                    <button id="finish" class="m-3">finish</button>
-
-
-                                  </form>
-                                  <div id="history"></div>
-                                  <script src="https://code.jquery.com/jquery-3.4.1.min.js"></script>
-                                  <script>
-                                  -->
-                                    <!--
-                                    let counter = 0;
-
-                                    // Respond to submit events
-                                    $('.add').on('submit', function(event) {
-                                      const form = $(this); // JQuery object representing the form
-                                      event.preventDefault(); // Don't really submit the form
-
-                                      // Create a new list
-                                      const list = $('<ul></ul>');
-
-                                      // Translate each input value into a list item
-                                      const inputs = form.find('input'); // JQuery object represent all inputs
-                                      for (let input of inputs) {
-                                        input = $(input); // Turn into a JQuery object
-                                        const li = $(`<li>${input.val()}</li>`); // New list item
-                                        list.append(li);
-                                        input.val(''); // Empty out the box
-                                      }
-
-                                      counter++;
-                                      const p = $(`<p>Submit #${counter}</p>`);
-
-                                      // Add to the page
-                                      $('#history').append(p);
-                                      $('#history').append(list);
-                                    });
-                                  -->
                                     <form class="addItem">
                                       <input type="text" name="left" class="form-control m-7" >
                                       <button class="btn btn-outline-primary btn-sm ml-5" type="add" id="answers">Add Item</button>
@@ -140,11 +84,7 @@
                                           .fail(error => alert('Could not create List'));
                                       })
 
-                                      </script>
-
-
-
-
+                                    </script>    
                                 </div>
                             </div>
                         </div>
