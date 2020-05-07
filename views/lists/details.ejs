@@ -100,7 +100,7 @@
               $('#fulfill').on('click', function(event) {
                 event.preventDefault();
                 $.ajax({method: 'delete', url: '/lists/<%= list._id -%>'})
-                  .done(() => window.location.redirect(document.referrer))
+                  .done(() => window.location.redirect('/lists/mylists'))
                   .fail(error => alert('Could not fulfill List'));
               })
             </script>
