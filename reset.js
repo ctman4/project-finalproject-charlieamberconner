@@ -29,7 +29,7 @@ const lists = [
     items: ['Bananas','Carrots','Beef','Orange Juice','Doritos'],
     timePosted: '4/7/2020 4:19 PM',
     fulfilled: 'No',
-    comments: [ [ 'amberlapata1','what kind of cheese would you like?'],['charlietirrell99','Swiss cheese please'] ]
+    comments: [ [ 'amberlopata1','what kind of cheese would you like?'],['charlietirrell99','Swiss cheese please'] ]
   })
 ];
 
