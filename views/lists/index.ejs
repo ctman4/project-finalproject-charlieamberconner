@@ -64,7 +64,7 @@
                                         const inputs = form.find('input'); // JQuery object represent all inputs
                                         for (let input of inputs) {
                                           input = $(input); // Turn into a JQuery object
-                                          const li = $(`<input class="mt-1" type = "text" name='items' value = '${input.val()}'>`); // New list item
+                                          const li = $(`<input class="mt-1" type = "text" name='items' value = '${input.val()}' aria-describedby="basic-addon2">`); // New list item
                                           list.append(li);
                                           //items.push(input.val());
 
