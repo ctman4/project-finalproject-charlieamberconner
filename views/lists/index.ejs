@@ -100,32 +100,27 @@
                                       <button class="btn btn-outline-primary btn-sm ml-5" type="add" id="answers">Add Item</button>
                                     </form>
                                     <form class="createButton pt-3">
-                                      <button class="btn btn-outline-success ml-5" type="add" name="final">Create List</button>
-
-                                    </form>
-
-                                    <form id="listform" pt-3>
-
-                                      <div id="history1" name="items"></div>
+                                      <button class="btn btn-outline-success ml-5" type="add">Create List</button>
+                                      <ul id="history1"></ul>
                                     </form>
 
 
                                     <script>
-                                    let counter = 0;
-                                    var items = [];
+                                    //let counter = 0;
+                                    //var items = [];
                                       $('.addItem').on('submit', function(event) {
                                         const form = $(this); // JQuery object representing the form
                                         event.preventDefault(); // Don't really submit the form
 
                                         // Create a new list
-                                        const list = $('<ul></ul>');
+                                        const list = $('<li></li>');
                                         counter++;
 
                                         // Translate each input value into a list item
                                         const inputs = form.find('input'); // JQuery object represent all inputs
                                         for (let input of inputs) {
                                           input = $(input); // Turn into a JQuery object
-                                          const li = $(`<div id=answers>${input.val()}</div>`); // New list item
+                                          const li = $(`<input name='items'>${input.val()}</input>`); // New list item
                                           list.append(li);
                                           items.push(input.val());
 
@@ -135,15 +130,10 @@
                                         $('#history1').append(list);
                                       });
 
-                                      $('.createButton').on('submit', function(event) {
-                                        const form = $(this);   // JQuery object representin the form
-                                        event.preventDefault();
-                                        $('#history1').remove();
-                                        //$(this).remove();
-                                      });
 
-                                      ('.createButton').on('sumbit', function(event) {
-                                        const form = $();
+
+                                      ('.createButton').on('submit', function(event) {
+                                        const form = $(this);
                                         event.preventDefault();
                                         $.ajax({method: 'post', url: '/lists', data: form.serialize()})
                                           .done(() => window.location.reload())
