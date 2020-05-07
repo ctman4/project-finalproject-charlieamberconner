@@ -120,7 +120,7 @@
                                         const inputs = form.find('input'); // JQuery object represent all inputs
                                         for (let input of inputs) {
                                           input = $(input); // Turn into a JQuery object
-                                          const li = $(`<input name='items'>${input.val()}</input>`); // New list item
+                                          const li = $(`<input name='items' value = '${input.val()}'>`); // New list item
                                           list.append(li);
                                           //items.push(input.val());
 
