@@ -139,11 +139,11 @@
                                         const form = $(this);   // JQuery object representin the form
                                         event.preventDefault();
                                         $('#history1').remove();
-                                        $(this).remove();
+                                        //$(this).remove();
                                       });
 
                                       ('.createButton').on('sumbit', function(event) {
-                                        const form = $('#listform');
+                                        const form = $();
                                         event.preventDefault();
                                         $.ajax({method: 'post', url: '/lists', data: form.serialize()})
                                           .done(() => window.location.reload())
