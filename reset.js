@@ -43,8 +43,8 @@ const users = [
   }),
 
   new User({
-    _id: 'amberlapata1',
-    name: 'Amber Lapata',
+    _id: 'amberlopata1',
+    name: 'Amber Lopata',
     location: 'Boston, MA',
     phone: '5087281010'
   }),
