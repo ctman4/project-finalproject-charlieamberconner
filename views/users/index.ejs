@@ -10,14 +10,14 @@
             <main>
 
                 <div class="row">
-                  <div class="col-4 p-4 text-center">
+                  <div class="col-4 pt-4 text-center">
                     <img class="rounded-circle" width="250" src="https://picsum.photos/50/50" alt="">
                   </div>
                   <div class="col-8 pt-5">
-                    <h3><%= user.name -%></h3>
-                    <p>@<%= user._id -%></p>
-                    <p><b>Location: </b><%= user.location -%></p>
-                    <p><b>Phone Number: </b><%= user.phone -%></p>
+                    <h1 class="display-4"><%= user.name -%></h1>
+                    <p class="lead">@<%= user._id -%></p>
+                    <p class="lead"><b>Location: </b><%= user.location -%></p>
+                    <p class="lead"><b>Phone Number: </b><%= user.phone -%></p>
                   </div>
                 </div>
 
