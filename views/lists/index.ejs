@@ -102,7 +102,7 @@
                                     <form class="createButton pt-3">
                                       <button class="btn btn-outline-success ml-5" type="add" name="final">Create List</button>
                                     </form>
-                                    <div id="history1"></div>
+                                    <div id="history1" name="items"></div>
                                     <script>
                                     let counter = 0;
                                     var items = [];
@@ -135,8 +135,8 @@
                                         $(this).remove();
                                       });
 
-                                      ('#create').on('sumbit', function(event) {
-                                        const form = $(this);
+                                      ('.createButton').on('sumbit', function(event) {
+                                        const form = $('#history1');
                                         event.preventDefault();
                                         $.ajax({method: 'post', url: '/lists', data: form.serialize()})
                                           .done(() => window.location.reload())
