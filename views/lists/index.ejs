@@ -40,11 +40,11 @@
                                     <label class="sr-only" for="message">post</label>
 
                                     <form class="addItem">
-                                      <input type="text" name="left" class="form-control m-7" >
-                                      <button class="btn btn-outline-primary btn-sm ml-5" type="add" id="answers">Add Item</button>
+                                      <input type="text" class="form-control m-7" >
+                                      <button class="btn btn-outline-primary btn-sm mt-5" type="add" id="answers">Add Item</button>
                                     </form>
                                     <form class="createButton pt-3">
-                                      <button class="btn btn-outline-success ml-5" type="add">Create List</button>
+                                      <button class="btn btn-outline-success btn-sm mt-5" type="add">Create List</button>
                                       <ul id="history1"></ul>
                                     </form>
 
@@ -64,7 +64,7 @@
                                         const inputs = form.find('input'); // JQuery object represent all inputs
                                         for (let input of inputs) {
                                           input = $(input); // Turn into a JQuery object
-                                          const li = $(`<input name='items' value = '${input.val()}'>`); // New list item
+                                          const li = $(`<input class="mt-1" type = "text" name='items' value = '${input.val()}'>`); // New list item
                                           list.append(li);
                                           //items.push(input.val());
 
@@ -84,7 +84,7 @@
                                           .fail(error => alert('Could not create List'));
                                       })
 
-                                    </script>    
+                                    </script>
                                 </div>
                             </div>
                         </div>
