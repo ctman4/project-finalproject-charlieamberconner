@@ -11,7 +11,6 @@ const List = new mongoose.Schema({
   timePosted: Date,
   claimedBy: String,
   fulfilled: String,
-  comments: [[String]]
 });
 
 

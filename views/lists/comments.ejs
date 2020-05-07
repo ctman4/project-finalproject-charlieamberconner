@@ -1,0 +1,19 @@
+<html>
+  <table>
+    <thead><h4 class="pl-0 border-bottom">Comments:</h4></thead
+    <%_ for (const com of list.comments) { -%>
+      <tr class="mt=2">
+        <th scope="row"><%= com[0] -%>: </td>
+        <td><%= com[1] -%></td>
+      </tr>
+    <%_ } -%>
+  </table>
+  <form>
+    <div class="input-group mt-3">
+      <input type="text" class="form-control">
+      <div class="input-group-append">
+        <button type="submit" class="input-group-text">Comment</button>
+      </div>
+    </div>
+  </form>
+</html>
