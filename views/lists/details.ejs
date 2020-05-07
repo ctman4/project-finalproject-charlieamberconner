@@ -74,11 +74,8 @@
                 <%_ } -%>
               </li>
               <li>
-                <button id="fulfill" class="btn btn-success">Fulfill</button>
-                <%_ if (list.fulfilled) { -%>
-                  <p class="text-warning">Fulfilled: <%= list.fulfilled -%></p>
-                <%_ } else { -%>
-                  <p class="text-primary">List Not fulfilled</p>
+                <%_ if (user) { -%>
+                  <button id="fulfill" class="btn btn-success">Fulfill</button>
                 <%_ } -%>
               </li>
             </ul>
