@@ -8,11 +8,11 @@
       <%- include('../navbar', {active: 'users'}); -%>
 
             <main class="mx-auto" style="width: 400px;">
-              <div>
-                <div class="row">
+              <div class="row">
+                <div class="col">
                   <img class="rounded-circle" width="175" src="https://picsum.photos/50/50" alt="">
                 </div>
-                <div class="row">
+                <div class="col">
                   <h2><%= user.name -%></h2>
                   <p>@<%= user._id -%></p>
                   <p><b>Location: </b><%= user.location -%></p>
