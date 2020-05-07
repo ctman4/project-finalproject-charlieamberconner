@@ -36,6 +36,7 @@
                 <script> // Log in
                 $('.input-group-append').on('submit', function(event) {
                   const form = $(this);
+                  console.log(form);
                   event.preventDefault();
                   $.ajax({method: 'post', url: '/login', data: form.serialize()})
                   .done(() => window.location.replace('/users'))
