@@ -8,15 +8,17 @@
       <%- include('../navbar', {active: 'users'}); -%>
 
             <main class="mx-auto" style="width: 400px;">
-              <div class="row">
-                <div class="col">
-                  <img class="rounded-circle" width="175" src="https://picsum.photos/50/50" alt="">
-                </div>
-                <div class="col">
-                  <h2><%= user.name -%></h2>
-                  <p>@<%= user._id -%></p>
-                  <p><b>Location: </b><%= user.location -%></p>
-                  <p><b>Phone Number: </b><%= user.phone -%></p>
+              <div class="container">
+                <div class="row">
+                  <div class="col-md-auto">
+                    <img class="rounded-circle" width="175" src="https://picsum.photos/50/50" alt="">
+                  </div>
+                  <div class="col-md-auto">
+                    <h2><%= user.name -%></h2>
+                    <p>@<%= user._id -%></p>
+                    <p><b>Location: </b><%= user.location -%></p>
+                    <p><b>Phone Number: </b><%= user.phone -%></p>
+                  </div>
                 </div>
               </div>
             </main>
