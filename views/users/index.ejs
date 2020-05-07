@@ -2,35 +2,24 @@
 <html>
   <%- include('../head'); -%>
 
-  <!------ Include the above in your HEAD tag ---------->
+  <!-- Include the above in your HEAD tag -->
 
- <!---
-  <body>
-    <div class="pb-5">
-      <%- include('../navbar', {active: 'users'}); -%>
-    </div>
-    <div class = "m-5">
-    <div class = "container-fluid m-5" id="profilepicture">
-      <img class="rounded circle" src="http://via.placeholder.com/200x200">
-    </div>
-  </body>
---->
     <body>
       <%- include('../navbar', {active: 'users'}); -%>
 
             <main class="p-3">
               <div class="row">
-                <div class="mr-2 col-auto p-3 border-left">
+                <div class="text-center">
                     <img class="rounded-circle" width="175" src="https://picsum.photos/50/50" alt="">
                 </div>
-                <div class="col pt-3">
+                <div class="text-center">
                   <h2><%= user.name -%></h2>
                   <p>@<%= user._id -%></p>
                   <p><b>Location: </b><%= user.location -%></p>
                   <p><b>Phone Number: </b><%= user.phone -%></p>
                 </div>
               </div>
-              
+
             </main>
 
     </body>
