@@ -80,6 +80,7 @@
                                       $('.createButton').on('submit', function(event) {
                                         const form = $(this);
                                         event.preventDefault();
+                                        const title = form.find('#title');
                                         $.ajax({method: 'post', url: '/lists', data: form.serialize()})
                                           .done(() => window.location.reload())
                                           .fail(error => alert('Could not create List'));
