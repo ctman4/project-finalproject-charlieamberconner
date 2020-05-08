@@ -39,54 +39,68 @@
                                 <div class="form-group">
                                     <label class="sr-only" for="message">post</label>
 
-                                    <form class="addItem">
-                                      <input placeholder="List title" type="text" class="form-control mb-4" id="title">
-                                      <input placeholder="item" type="text" class="form-control m-7" id="items">
-                                      <button class="btn btn-outline-primary btn-sm mt-3" type="add" id="answers">Add Item</button>
+                                    <!--
+                                    <form id ="create" class="form-inline">
+                                      <textarea class="form-control" id="message" name="items" rows="3" placeholder="Enter list items"></textarea>
+                                      <div class="btn-toolbar justify-content-between">
+                                          <div class="btn-group">
+                                              <button type="submit" class="btn btn-primary" id="insert">share</button>
+                                          </div>
+                                      </div>
                                     </form>
-                                    <form class="createButton pt-3">
-                                      <button class="btn btn-outline-success btn-sm mt-3 mb-2" type="add">Create List</button>
-                                      <ul id="history1"></ul>
-                                    </form>
+                                  -->
 
-                                    <script src="https://code.jquery.com/jquery-3.4.1.min.js"></script>
-                                    <script>
-                                    //let counter = 0;
-                                    //var items = [];
-                                      $('.addItem').on('submit', function(event) {
-                                        const form = $(this); // JQuery object representing the form
-                                        event.preventDefault(); // Don't really submit the form
+                                  <form class="addItem">
+                                    <input type="text" class="form-control m-7"  placeholder="Ex. 6 Bananas">
+                                    <button class="btn btn-outline-primary btn-sm mt-3" type="add" id="answers">Add Item</button>
+                                  </form>
+                                  <form class="createButton pt-3">
+                                    <ul id="history1"></ul>
+                                    <input type="text" class="form-control m-7" name="title"  placeholder="Enter List Title">
+                                    <button class="btn btn-outline-success btn-sm mt-3" type="add">Create List</button>
 
-                                        // Create a new list
-                                        const list = $('<li></li>');
-                                        //counter++;
+                                  </form>
 
-                                        // Translate each input value into a list item
-                                        const inputs = form.find('#items'); // JQuery object represent all inputs
-                                        for (let input of inputs) {
-                                          input = $(input); // Turn into a JQuery object
-                                          const li = $(`<input class="mt-1" type = "text" name='items' value = '${input.val()}' aria-describedby="basic-addon2">`); // New list item
-                                          list.append(li);
-                                          //items.push(input.val());
+                                  <script src="https://code.jquery.com/jquery-3.4.1.min.js"></script>
+                                  <script>
+                                  //let counter = 0;
+                                  //var items = [];
+                                    $('.addItem').on('submit', function(event) {
+                                      const form = $(this); // JQuery object representing the form
+                                      event.preventDefault(); // Don't really submit the form
 
-                                          input.val(''); // Empty out the box
-                                        }
+                                      // Create a new list
+                                      const list = $('<li></li>');
+                                      //counter++;
 
-                                        $('#history1').append(list);
-                                      });
+                                      // Translate each input value into a list item
+                                      const inputs = form.find('input'); // JQuery object represent all inputs
+                                      for (let input of inputs) {
+                                        input = $(input); // Turn into a JQuery object
+                                        const li = $(`<input class="mt-1" type = "text" name='items' value = '${input.val()}' aria-describedby="basic-addon2">`); // New list item
+                                        list.append(li);
+                                        //items.push(input.val());
+
+                                        input.val(''); // Empty out the box
+                                      }
+
+                                      $('#history1').append(list);
+                                    });
 
 
 
-                                      $('.createButton').on('submit', function(event) {
-                                        const form = $(this);
-                                        event.preventDefault();
-                                        const title = form.find('#title');
-                                        $.ajax({method: 'post', url: '/lists', data: form.serialize()})
-                                          .done(() => window.location.reload())
-                                          .fail(error => alert('Could not create List'));
-                                      })
+                                    $('.createButton').on('submit', function(event) {
+                                      const form = $(this);
+                                      event.preventDefault();
+                                      $.ajax({method: 'post', url: '/lists', data: form.serialize()})
+                                        .done(() => window.location.reload())
+                                        .fail(error => alert('Could not create List'));
+                                    })
 
-                                    </script>
+                                  </script>
+
+
+
                                 </div>
                             </div>
                         </div>
