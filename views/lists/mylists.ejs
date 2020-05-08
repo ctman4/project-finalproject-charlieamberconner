@@ -60,7 +60,7 @@
                                   <ul id="history1"></ul>
                                   <input type="text" class="form-control m-7" name="title"  placeholder="Enter List Title">
                                   <button class="btn btn-outline-success btn-sm mt-3" type="add">Create List</button>
-                                  
+
                                 </form>
 
                                 <script src="https://code.jquery.com/jquery-3.4.1.min.js"></script>
@@ -132,9 +132,17 @@
                               <div class="text-muted h7 mb-2"> <i class="fa fa-clock-o"></i>
                                 <%= list.timePosted.getMonth() +"/"+ list.timePosted.getDate() +"/"+ list.timePosted.getFullYear() -%>
                                 <%_ if (list.timePosted.getHours() < 12) { -%>
-                                  <%= list.timePosted.getHours()%12 +":"+ list.timePosted.getMinutes() +"AM" -%>
+                                  <%_ if (list.timePosted.getMinutes() < 10) { -%>
+                                    <%= list.timePosted.getHours()%12 +":0"+ list.timePosted.getMinutes() +"AM" -%>
+                                  <%_ } else { -%>
+                                    <%= list.timePosted.getHours()%12 +":"+ list.timePosted.getMinutes() +"AM" -%>
+                                  <%_ } -%>
                                 <%_ } else { -%>
-                                  <%= list.timePosted.getHours()%12 +":"+ list.timePosted.getMinutes() +"PM" -%>
+                                  <%_ if (list.timePosted.getMinutes() < 10) { -%>
+                                    <%= list.timePosted.getHours()%12 +":0"+ list.timePosted.getMinutes() +"PM" -%>
+                                  <%_ } else { -%>
+                                    <%= list.timePosted.getHours()%12 +":"+ list.timePosted.getMinutes() +"PM" -%>
+                                  <%_ } -%>
                                 <%_ } -%>
                               </div>
                               <a class="card-link" href="/lists/<%= list.id -%>" >
