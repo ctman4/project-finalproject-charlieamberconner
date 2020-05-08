@@ -1,20 +1,15 @@
 <html>
   <script>
   const Comment = require('../models/comments');
-  const comments = function(request, response, next) {
+  window.onload = function() {
     Comment.find({ list: request.query.list})
+      .then(console.log('hi'))
       .catch(error => next(error));
   };
   </script>
   <table>
     <thead><h4 class="pl-0 border-bottom">Comments:</h4></thead>
     <tr> <%= li.customerID -%> </tr>
-    <%_ for (const com of comments) { -%>
-      <tr class="mt=2">
-        <th scope="row"> </th>
-        <td><%= com.text -%></td>
-      </tr>
-    <%_ } -%>
   </table>
   <form>
     <div class="input-group mt-3">
