@@ -40,7 +40,8 @@
                                     <label class="sr-only" for="message">post</label>
 
                                     <form class="addItem">
-                                      <input type="text" class="form-control m-7" >
+                                      <input placeholder="List Title" type="text" class="form-control mb-4" id="title">
+                                      <input type="text" class="form-control m-7" id="items">
                                       <button class="btn btn-outline-primary btn-sm mt-3" type="add" id="answers">Add Item</button>
                                     </form>
                                     <form class="createButton pt-3">
@@ -61,7 +62,7 @@
                                         //counter++;
 
                                         // Translate each input value into a list item
-                                        const inputs = form.find('input'); // JQuery object represent all inputs
+                                        const inputs = form.find('#items'); // JQuery object represent all inputs
                                         for (let input of inputs) {
                                           input = $(input); // Turn into a JQuery object
                                           const li = $(`<input class="mt-1" type = "text" name='items' value = '${input.val()}' aria-describedby="basic-addon2">`); // New list item
