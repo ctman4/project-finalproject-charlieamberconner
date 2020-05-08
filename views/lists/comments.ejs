@@ -2,13 +2,15 @@
   <script>
   const Comment = require('../models/comments');
   window.onload = function() {
-    var comments = Comment.find({list: li})
-    $("#target").text(comments);
+    $.ajax({method: 'get', url: '/comments'})
+      .done(() => window.location.reload())
+      .fail(error => alert('Could not comment'));
   };
   </script>
   <table>
     <thead><h4 class="pl-0 border-bottom">Comments:</h4></thead>
     <tr> <%= li.customerID -%> </tr>
+    <div> <%= comments -%> </div>
     <div id='target'></div>
   </table>
   <form>
