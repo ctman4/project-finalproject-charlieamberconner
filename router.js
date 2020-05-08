@@ -55,7 +55,8 @@ router.put('/lists/:id', authorize, lists.claim);
 router.post('/lists', authorize, lists.create);
 router.delete('/lists/:id', authorize, lists.delete);
 
-router.post('/comments/:list', authorize, comments.comment);
+router.get('/comments', authorize, comments.retrieve)
+//router.post('/comments/:list', authorize, comments.comment);
 
 
 module.exports = router;
