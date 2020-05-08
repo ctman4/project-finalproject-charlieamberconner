@@ -29,7 +29,7 @@
                 <%= list.timePosted.getHours()%12 +":"+ list.timePosted.getMinutes() +"PM" -%>
               <%_ } -%>
             </div>
-            <h5 class="card-title">My List</h5>
+            <h5 class="card-title"><%= list.title -%></h5>
 
             <p class="card-text">
               <ul id="bulletlist" class="a">
