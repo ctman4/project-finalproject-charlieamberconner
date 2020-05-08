@@ -36,7 +36,7 @@
                                       </div>
                                       <div class="ml-2">
                                           <div class="h5 m-0">
-                                            <%= list.customerName -%> 
+                                            <%= list.customerName -%>
                                           </div>
                                       </div>
                                   </div>
@@ -46,9 +46,15 @@
                               <div class="text-muted h7 mb-2"> <i class="fa fa-clock-o"></i>
                                 <%= list.timePosted.getMonth() +"/"+ list.timePosted.getDate() +"/"+ list.timePosted.getFullYear() -%>
                                 <%_ if (list.timePosted.getHours() < 12) { -%>
-                                  <%= list.timePosted.getHours()%12 +":"+ list.timePosted.getMinutes() +"AM" -%>
+                                  <%_ if (list.timePosted.getMinutes() < 10) { -%>
+                                    <%= list.timePosted.getHours()%12 +":0"+ list.timePosted.getMinutes() +"AM" -%>
+                                  <%_ } else { -%>
+                                    <%= list.timePosted.getHours()%12 +":"+ list.timePosted.getMinutes() +"AM" -%>
                                 <%_ } else { -%>
-                                  <%= list.timePosted.getHours()%12 +":"+ list.timePosted.getMinutes() +"PM" -%>
+                                  <%_ if (list.timePosted.getMinutes() < 10) { -%>
+                                    <%= list.timePosted.getHours()%12 +":0"+ list.timePosted.getMinutes() +"PM" -%>
+                                  <%_ } else { -%>
+                                    <%= list.timePosted.getHours()%12 +":"+ list.timePosted.getMinutes() +"PM" -%>
                                 <%_ } -%>
                               </div>
                               <a class="card-link" href="/lists/<%= list.id -%>" >
