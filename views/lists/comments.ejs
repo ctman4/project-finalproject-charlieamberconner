@@ -1,7 +1,13 @@
 <html>
   <table>
-    <thead><h4 class="pl-0 border-bottom">Comments:</h4></thead
+    <thead><h4 class="pl-0 border-bottom">Comments:</h4></thead>
     <tr> <%= li.customerID -%> </tr>
+    <%_ for (const com of comments) { -%>
+      <tr class="mt=2">
+        <th scope="row"> </th>
+        <td><%= com.text -%></td>
+      </tr>
+    <%_ } -%>
   </table>
   <form>
     <div class="input-group mt-3">
