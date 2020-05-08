@@ -1,5 +1,5 @@
 const List = require('../models/lists');
-
+const Comment = require('../models/comments');
 
 // GET /mylists?sort=
 module.exports.index = function(request, response, next) {
@@ -39,9 +39,14 @@ module.exports.mylists = function(request, response, next) {
 
 // GET /lists/:id
 module.exports.retrieve = function(request, response, next) {
-  List.findById(request.params.id).then(function(list) {
+  const queries = [
+    List.findById(request.params.id),
+    Comment.find({list: list}))
+  ]
+
+  Promise.all(queries).then(function([list, comments]) {
     if (list) {
-      response.render('lists/details', {list: list});
+      response.render('list/details', {list: list, comments: comments});
     } else {
       next(); // No such list
     }
