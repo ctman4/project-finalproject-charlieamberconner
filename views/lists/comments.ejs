@@ -2,14 +2,14 @@
   <script>
   const Comment = require('../models/comments');
   window.onload = function() {
-    Comment.find({ list: request.query.list})
-      .then(console.log('hi'))
-      .catch(error => next(error));
+    var comments = Comment.find({list: li})
+    $("#target").text(comments);
   };
   </script>
   <table>
     <thead><h4 class="pl-0 border-bottom">Comments:</h4></thead>
     <tr> <%= li.customerID -%> </tr>
+    <div id='target'></div>
   </table>
   <form>
     <div class="input-group mt-3">
