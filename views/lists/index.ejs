@@ -122,11 +122,13 @@
                                     <%= list.timePosted.getHours()%12 +":0"+ list.timePosted.getMinutes() +"AM" -%>
                                   <%_ } else { -%>
                                     <%= list.timePosted.getHours()%12 +":"+ list.timePosted.getMinutes() +"AM" -%>
+                                  <%_ } -%>
                                 <%_ } else { -%>
                                   <%_ if (list.timePosted.getMinutes() < 10) { -%>
                                     <%= list.timePosted.getHours()%12 +":0"+ list.timePosted.getMinutes() +"PM" -%>
                                   <%_ } else { -%>
                                     <%= list.timePosted.getHours()%12 +":"+ list.timePosted.getMinutes() +"PM" -%>
+                                  <%_ } -%>
                                 <%_ } -%>
                               </div>
                               <a class="card-link" href="/lists/<%= list.id -%>" >
