@@ -1,4 +1,11 @@
 <html>
+  <script>
+  const Comment = require('../models/comments');
+  const comments = function(request, response, next) {
+    Comment.find({ list: request.query.list})
+      .catch(error => next(error));
+  };
+  </script>
   <table>
     <thead><h4 class="pl-0 border-bottom">Comments:</h4></thead>
     <tr> <%= li.customerID -%> </tr>
