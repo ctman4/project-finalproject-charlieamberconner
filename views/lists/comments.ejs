@@ -1,15 +1,13 @@
 <html>
-  <script>
-  const Comment = require('../models/comments');
-  window.onload = function() {
-    var comments = Comment.find({list: li})
-    $("#target").text(comments);
-  };
-  </script>
   <table>
     <thead><h4 class="pl-0 border-bottom">Comments:</h4></thead>
     <tr> <%= li.customerID -%> </tr>
-    <div id='target'></div>
+    <%_ for (const com of coms) { -%>
+      <tr class="mt=2">
+        <th scope="row"><%= com.customerID -%>: </td>
+        <td><%= com.text -%></td>
+      </tr>
+    <%_ } -%>
   </table>
   <form>
     <div class="input-group mt-3">
