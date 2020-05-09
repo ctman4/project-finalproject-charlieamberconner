@@ -21,7 +21,7 @@
   <script>
     $('form').on('submit', function(event) {
       event.preventDefault();
-      $.ajax({method: 'post', url: '/comments/<%= li._id -%>'})
+      $.ajax({method: 'post', url: '/comments/<%= li._id -%>', data: form.serialize()})
         .done(() => window.location.reload())
         .fail(error => alert('Could not comment'));
     })
