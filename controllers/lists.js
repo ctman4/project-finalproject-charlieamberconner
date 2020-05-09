@@ -41,7 +41,7 @@ module.exports.mylists = function(request, response, next) {
 module.exports.retrieve = function(request, response, next) {
   const queries = [
     List.findById(request.params.id),
-    Comment.find({list: list}))
+    Comment.find({list: list})
   ]
 
   Promise.all(queries).then(function([list, comments]) {
