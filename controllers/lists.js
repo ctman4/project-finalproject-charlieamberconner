@@ -41,7 +41,7 @@ module.exports.mylists = function(request, response, next) {
 module.exports.retrieve = function(request, response, next) {
   const queries = [
     List.findById(request.params.id),
-    Comment.find()
+    Comment.find({list: request.params.id})
   ]
 
   Promise.all(queries).then(function([list, comments]) {
@@ -96,7 +96,7 @@ module.exports.claim = function(request, response, next) {
 };
 
 module.exports.comment = function(request, response, next) {
-  Comment.create({list: request.params.list, customerID: request.session.user._id, text: request.body.text})
+  Comment.create({list: request.params.id, customerID: request.session.user._id, text: request.body.text})
     .then(list => response.status(201).send(list.id))
     .catch(error => next(error));
 };
