@@ -46,7 +46,7 @@ module.exports.retrieve = function(request, response, next) {
 
   Promise.all(queries).then(function([list, comments]) {
     if (list) {
-      response.render('list/details', {list: list, comments: comments});
+      response.render('lists/details', {list: list, comments: comments});
     } else {
       next(); // No such list
     }
