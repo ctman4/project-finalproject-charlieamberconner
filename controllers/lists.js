@@ -96,8 +96,7 @@ module.exports.claim = function(request, response, next) {
 };
 
 module.exports.comment = function(request, response, next) {
-
-  List.findByIdAndUpdate(request.params.id, {comments: comments.push([request.session.user._id, request.body])})
-    .then(list => list ? response.status(200).end() : next())
+  List.create({list: request.params.list, customerID: request.session.user._id, text: request.body.text})
+    .then(list => response.status(201).send(list.id))
     .catch(error => next(error));
 };
