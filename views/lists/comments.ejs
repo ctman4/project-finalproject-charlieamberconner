@@ -20,6 +20,7 @@
   <script src="https://code.jquery.com/jquery-3.4.1.min.js"></script>
   <script>
     $('form').on('submit', function(event) {
+      const form = $(this);
       event.preventDefault();
       $.ajax({method: 'post', url: '/comments/<%= li._id -%>', data: form.serialize()})
         .done(() => window.location.reload())
