@@ -18,11 +18,11 @@
     </div>
   </form>
   <script>
-  $('form').on('submit', function(event) {
-    event.preventDefault();
-    $.ajax({method: 'post', url: '/comments/<%= li._id -%>'})
-      .done(() => window.location.reload())
-      .fail(error => alert('Could not comment'));
+    $('form').on('submit', function(event) {
+      event.preventDefault();
+      $.ajax({method: 'post', url: '/comments/<%= li._id -%>'})
+        .done(() => window.location.reload())
+        .fail(error => alert('Could not comment'));
   })
   </script>
 </html>
